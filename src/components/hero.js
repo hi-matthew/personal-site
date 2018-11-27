@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import Menu from './menu'
 
 const HeroContainer = styled.div`
   flex: 1; 
@@ -47,29 +48,32 @@ const Hero = ({ page }) => (
         }
     `}
     render={data => 
-      <HeroContainer>
-        <Img 
-        fluid={
-        page === '/' 
-        ? data.leaves.childImageSharp.fluid
-        : page === '/work'
-        ? data.computer.childImageSharp.fluid
-        : data.typewriter.childImageSharp.fluid
-        } 
-        style={{
-          position: "absolute",
-          width: '100%',
-          height: "98vh",
-          zIndex: '-1',
-        }}
-        />
-        <div style={{
-          width: "100%",
-          height: "100%",
-        }}>
-          <Url>matthewoctober.com</Url>
-        </div>
-      </HeroContainer>
+      <React.Fragment>
+        <Menu/>
+        <HeroContainer>
+          <Img 
+          fluid={
+          page === '/' 
+          ? data.leaves.childImageSharp.fluid
+          : page === '/work'
+          ? data.computer.childImageSharp.fluid
+          : data.typewriter.childImageSharp.fluid
+          } 
+          style={{
+            position: "absolute",
+            width: '100%',
+            height: "98vh",
+            zIndex: '-1',
+          }}
+          />
+          <div style={{
+            width: "100%",
+            height: "100%",
+          }}>
+            <Url>matthewoctober.com</Url>
+          </div>
+        </HeroContainer>
+      </React.Fragment>
     }
   />
 )

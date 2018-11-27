@@ -15,7 +15,6 @@ const List = styled.ul`
   .link {
     text-decoration: none;
     color: ${props => props.theme.link};
-    font-family: "helvetica";
     font-size: 16px;
     position: relative;
   }
@@ -51,10 +50,9 @@ const List = styled.ul`
   }
 `
 
-const MenuItems = (props) => (
+const MenuItems = () => (
   <List>
-    {console.log(props)}
-    <Link
+    <Link 
     className="link"
     activeClassName="active" 
     to={'/'}

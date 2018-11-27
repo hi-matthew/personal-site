@@ -14,9 +14,9 @@ const Container = styled.div`
   justify-content: center;
 `
 
-const Menu = (props) => (
+const Menu = () => (
   <Container>
-    <MenuItems truthy={props.page === '/prose'}/>
+    <MenuItems />
   </Container>
 )
 
