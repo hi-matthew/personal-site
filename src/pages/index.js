@@ -3,19 +3,16 @@ import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
 import Layout from '../components/layout'
-import Footer from '../components/footer'
+// import Footer from '../components/footer'
 import Hero from "../components/hero"
 
 const Intro = styled.section`
-  height: 98vh;
-  width: 100%;
   text-align: center;
   font-size: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  overflow-y: scroll;
 `
 
 const Greeter = styled.div`
@@ -24,10 +21,16 @@ const Greeter = styled.div`
   align-items: center;
   max-width: 75%;
   margin-top: 65px;
+  position: relative;
+  width: 100%;
+  height: auto;
 `
 
 const Details = styled(Greeter)`
   margin-top: 90px;
+  position: relative;
+  width: 100%;
+  height: auto;
 `
 
 const H2 = styled.h2`
@@ -95,7 +98,9 @@ const ButtonContainer = styled.div`
 
 const IndexPage = ({ data, location }) => (
   <Layout>
-    <Hero page={location.pathname}/>
+    <div style={{ flex: '1' }}>
+      <Hero page={location.pathname}/>
+    </div>
     <Intro>
       <Greeter>
         <Img 
@@ -145,7 +150,7 @@ const IndexPage = ({ data, location }) => (
           </ButtonContainer>
         </Link>
       </Details>
-      <Footer />
+      {/* <Footer /> */}
     </Intro>
   </Layout>
 )

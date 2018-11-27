@@ -6,8 +6,9 @@ import Menu from './menu'
 
 const HeroContainer = styled.div`
   flex: 1; 
-  height: 100vh;
-  position: relative; 
+  height: 98.5vh;
+  width: 49.5%;
+  position: fixed; 
 `
 
 const Url = styled.span`
@@ -48,32 +49,30 @@ const Hero = ({ page }) => (
         }
     `}
     render={data => 
-      <React.Fragment>
+      <HeroContainer>
         <Menu/>
-        <HeroContainer>
-          <Img 
-          fluid={
-          page === '/' 
-          ? data.leaves.childImageSharp.fluid
-          : page === '/work'
-          ? data.computer.childImageSharp.fluid
-          : data.typewriter.childImageSharp.fluid
-          } 
-          style={{
-            position: "absolute",
-            width: '100%',
-            height: "98vh",
-            zIndex: '-1',
-          }}
-          />
-          <div style={{
-            width: "100%",
-            height: "100%",
-          }}>
-            <Url>matthewoctober.com</Url>
-          </div>
-        </HeroContainer>
-      </React.Fragment>
+        <Img 
+        fluid={
+        page === '/' 
+        ? data.leaves.childImageSharp.fluid
+        : page === '/work'
+        ? data.computer.childImageSharp.fluid
+        : data.typewriter.childImageSharp.fluid
+        } 
+        style={{
+          position: "absolute",
+          width: '100%',
+          height: "98.5vh",
+          zIndex: '-1',
+        }}
+        />
+        <div style={{
+          width: "100%",
+          height: "100%",
+        }}>
+          <Url>matthewoctober.com</Url>
+        </div>
+      </HeroContainer>
     }
   />
 )

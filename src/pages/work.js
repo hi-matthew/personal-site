@@ -6,7 +6,9 @@ import Layout from '../components/layout'
 
 const Work = (props) => (
   <Layout>
-      <Hero page={props.location.pathname}/>
+      <div style={{ flex: '1' }}>
+        <Hero page={props.location.pathname}/>
+      </div>
       <div style={{ flex: '1', margin: '0 auto', width: "100%", textAlign: "center" }}>
         <h1>Hi from the second page</h1>
         <p>Welcome to page 2</p>

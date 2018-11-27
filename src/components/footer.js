@@ -9,6 +9,7 @@ const BespokeFooter = styled.div`
   align-items: center;
   background-color: #272729;
   margin-top: 90px;
+  position: relative;
   p {
     margin: 0 0;
     padding: 0 0;

@@ -6,11 +6,12 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const GlobalStyle = createGlobalStyle`
    html {
-     overflow-y: hidden;
+     overflow-y: scroll;
    }
    body {
      margin: 7px 7px;
      font-family: "Helvetica";
+     height: 98.5vh;
    }
    p, span {
     line-height: 1.5; 
@@ -54,7 +55,7 @@ const Layout = ({ children }) => (
           <div
           style={{
             maxWidth: "100vw",        
-            height: "100vh",
+            height: "auto",
             margin: '0 0',
             padding: '0 0',
             display: 'flex',
