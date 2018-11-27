@@ -1,36 +1,29 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import Layout from '../components/layout'
-import Hero from '../components/hero'
 import Footer from '../components/footer'
-
-const GlobalStyle = createGlobalStyle`
-  body p {
-    line-height: 1.5; 
-    font-size: 21px; 
-    color: #709090;
-  }
-`
+import Hero from "../components/hero"
 
 const Intro = styled.section`
-  background-color: #f8f8ff;
-  height: 100%;
-  max-width: 100%;
+  height: 98vh;
+  width: 100%;
   text-align: center;
   font-size: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  overflow-y: scroll;
 `
 
 const Greeter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 50%;
-  margin-top: 110px;
+  max-width: 75%;
+  margin-top: 65px;
 `
 
 const Details = styled(Greeter)`
@@ -38,62 +31,71 @@ const Details = styled(Greeter)`
 `
 
 const H2 = styled.h2`
-  color: #708090;
+  color: ${props => props.theme.darkblack};
   font-size: ${props => props.big ? "40px" : "28px"};
-  margin-bottom: ${props => props.big ? "75px" : "30px"};
+  margin-bottom: ${props => props.big ? "60px" : "30px"};
+  font-family: "Helvetica";
 `
 
 const ButtonContainer = styled.div`
-  width: 150px;
-  height: 50px;
+  width: 135px;
+  height: 45px;
   background-color: transparent;
-  border: 2px solid #708090;
   border-radius: 5px;
   position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  &::before, &::after {
-    position: absolute;
-    background-color: #709090;
-    width: 150px;
-    height: 50px;
-    left: 0;
-    top: 0;
-    content: '';
-    z-index: 1;
-  }
   &::before {
-    transform: translateX(-155px);
-    transition: transform 0ms ease;
-  }
-  &:hover::before {
-    transform: translateX(0px);
-    transition: transform 400ms ease;
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 8px;
+    z-index: 5;
+    transform: translateX(-10px);
   }
   &::after {
-    transition: transform 400ms ease;
-    transform: translateX(155px);
+    position: absolute;
+    background-color: ${props => props.theme.teal};
+    width: 45px;
+    height: 45px;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    content: "→";
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 15px;
+    align-items: center;
+    z-index: 1;
+    border-radius: 100px;
+    box-sizing: border-box;
+    transform: translate(-31px);
+    transition: width 400ms ease, padding-left 400ms ease;
   }
   &:hover::after {
-    transition: transform 0ms 400ms ease;
-    transform: translateX(0px);
+    width: 175px;
+    transition: width 400ms ease, padding-left 400ms ease;
+    padding-left: 27px;
   }
   & .button-cta {
-    z-index: 5;
+    z-index: 2;
     margin: 0 0;
     transition: color 500ms ease;
+    font-size: 16px;
+    padding: 0 0;
+    color: ${props => props.theme.teal};
+    font-weight: 700;
   }
   &:hover .button-cta {
     color: white;
   }
 `
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, location }) => (
   <Layout>
-    <GlobalStyle />
-    <Hero />
+    <Hero page={location.pathname}/>
     <Intro>
       <Greeter>
         <Img 
@@ -115,12 +117,13 @@ const IndexPage = ({ data }) => (
         width: "100%",
         marginBottom: "1.45rem"
         }}>
-          <Img fixed={data.reactLogo.childImageSharp.fixed} title="React"/>
           <Img fixed={data.js.childImageSharp.fixed} title="JavaScript"/>
-          <Img fixed={data.styled.childImageSharp.fixed} title="Styled Components"/>
-          <Img fixed={data.sass.childImageSharp.fixed} title="Sass"/>
+          <Img fixed={data.react.childImageSharp.fixed} title="React"/>
+          <Img fixed={data.redux.childImageSharp.fixed} title="Redux"/>
+          <Img fixed={data.node.childImageSharp.fixed} title="Node"/>
           <Img fixed={data.graphQL.childImageSharp.fixed} title="GraphQL"/>
           <Img fixed={data.gatsbyIcon.childImageSharp.fixed} title="Gatsby"/>
+          <Img fixed={data.styled.childImageSharp.fixed} title="Styled Components"/>
         </div>
         <p>Somewhere I'm able to learn from my peers.</p>
         <p>Somewhere I'm challenged and held accountable.</p>
@@ -132,12 +135,12 @@ const IndexPage = ({ data }) => (
         <H2 big>View my work</H2>
         <p>Feel free to review some of my personal projects.</p>
         <Link 
-        to={"/page-2"}
+        to={"/work"}
         style={{ textDecoration: "none" }}
         >
           <ButtonContainer>
             <p className="button-cta">
-              To the code
+              Projects
             </p>
           </ButtonContainer>
         </Link>
@@ -156,16 +159,19 @@ export const query = graphql`
         }
       }
     }
-    reactLogo: file(relativePath: {eq: "reactLogo.png"}) {
+    react: file(relativePath: {eq: "react.png"}) {
+      ...techStack
+    }
+    redux: file(relativePath: {eq: "redux.png"}) {
       ...techStack
     }
     js: file(relativePath: {eq: "js.jpg"}) {
       ...techStack
     }
-    styled: file(relativePath: {eq: "styled.png"}) {
+    node: file(relativePath: {eq: "node.png"}) {
       ...techStack
     }
-    sass: file(relativePath: {eq: "sass.png"}) {
+    styled: file(relativePath: {eq: "styled.png"}) {
       ...techStack
     }
     gatsbyIcon: file(relativePath: {eq: "gatsby-icon.png"}) {

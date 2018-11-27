@@ -4,62 +4,70 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 const HeroContainer = styled.div`
-  max-width: 100%; 
+  flex: 1; 
   height: 100vh;
-  overflow: hidden;
   position: relative; 
 `
 
-const HeroMessage = styled.h1`
-  font-size: 50px;
-  color: rgba(0, 0, 0, 0.8);
-  top: 12.5%;
-  left: 10%;
+const Url = styled.span`
+  color: ${props => props.theme.teal};
+  font-family: "Helvetica";
+  transform: rotate(-90deg);
+  padding: 0 0;
   margin: 0 0;
+  text-transform: uppercase;
+  transform-origin: 100%;
+  font-size: 14px;
+  letter-spacing: 2px;
   position: absolute;
+  right: 20px;
+  bottom: 230px;
 `
 
-const SubHeroMessage = styled.h3`
-  margin-bottom: ${props => props.first ? "5px" : "0"};
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.7);
-`
-
-const Hero = () => (
+const Hero = ({ page }) => (
   <StaticQuery
     query={graphql`
       query {
-        hero: file(relativePath: { eq: "hero.jpg" }) {
+        leaves: file(relativePath: { eq: "leaves.jpg" }) {
+          ...mainImage
+        }
+        computer: file(relativePath: { eq: "computer.jpg" }) {
+          ...mainImage
+        }
+        typewriter: file(relativePath: { eq: "typewriter.jpg" }) {
+          ...mainImage
+        }
+      }
+      fragment mainImage on File {
           childImageSharp {
             fluid(maxWidth: 1440) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-      }
     `}
     render={data => 
       <HeroContainer>
         <Img 
-        fluid={data.hero.childImageSharp.fluid} 
+        fluid={
+        page === '/' 
+        ? data.leaves.childImageSharp.fluid
+        : page === '/work'
+        ? data.computer.childImageSharp.fluid
+        : data.typewriter.childImageSharp.fluid
+        } 
         style={{
           position: "absolute",
-          width: "100%",
-          height: "100%",
-          zIndex: '-1'
+          width: '100%',
+          height: "98vh",
+          zIndex: '-1',
         }}
         />
-        <HeroMessage main>Hi, I'm Matt.</HeroMessage>
-        <div style={{ 
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          position:"absolute",
-          right: "10%",
-          bottom: "12.5%"
+        <div style={{
+          width: "100%",
+          height: "100%",
         }}>
-          <SubHeroMessage first>A self-taught developer</SubHeroMessage>
-          <SubHeroMessage>and dilettante runner.</SubHeroMessage>
+          <Url>matthewoctober.com</Url>
         </div>
       </HeroContainer>
     }

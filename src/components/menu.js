@@ -1,31 +1,22 @@
 import React from 'react'
+import MenuItems from "./menuItems"
 import styled from "styled-components"
 
 const Container = styled.div`
-  position: fixed; 
-  background-color: #c1c6cc;
-  box-shadow: 4px 4px 4px rgba(230, 230, 230);
-  height: 100%;
-  top: 0;
+  position: absolute; 
+  right: 50%;
   left: 0;
-`
-
-const MenuIcon = styled.div`
-  transform: rotate(-90deg);
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.6); 
-  font-weight: 700;
-  height: 100%;
+  transition: width 500ms ease;
+  z-index: 5;
+  opacity: 0.90;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `
 
-const Menu = () => (
+const Menu = (props) => (
   <Container>
-    <MenuIcon>
-      Menu
-    </MenuIcon>
+    <MenuItems truthy={props.page === '/prose'}/>
   </Container>
 )
 
