@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Menu from './menu'
@@ -39,6 +39,9 @@ const Hero = ({ page }) => (
         typewriter: file(relativePath: { eq: "typewriter.jpg" }) {
           ...mainImage
         }
+        wave: file(relativePath: { eq: "wave.jpg" }) {
+          ...mainImage
+        }
       }
       fragment mainImage on File {
           childImageSharp {
@@ -53,10 +56,12 @@ const Hero = ({ page }) => (
         <Menu/>
         <Img 
         fluid={
-        page === '/' 
+        page === '/'
         ? data.leaves.childImageSharp.fluid
         : page === '/work'
         ? data.computer.childImageSharp.fluid
+        : page === '/about'
+        ? data.wave.childImageSharp.fluid
         : data.typewriter.childImageSharp.fluid
         } 
         style={{
@@ -72,6 +77,9 @@ const Hero = ({ page }) => (
         }}>
           <Url>matthewoctober.com</Url>
         </div>
+        {/* <Link to={'/'} activeClassName="active">
+          <Logo>M</Logo>
+        </Link> */}
       </HeroContainer>
     }
   />

@@ -18,7 +18,8 @@ const List = styled.ul`
     font-size: 16px;
     position: relative;
   }
-  .link::after {
+  .link::after,
+  .link .logo::after {
     height: 7px;
     width: 0;
     left: 50%;
@@ -29,8 +30,13 @@ const List = styled.ul`
     position: absolute;
     transition: left 300ms ease, right 300ms ease, width 300ms ease;
   }
+  .link .logo::after {
+    transform: translateY(25px);
+  }
   .link:hover::after,
-  .active::after {
+  .link.active::after,
+  .link .logo:hover::after,
+  .link.active .logo::after {
     left: 0;
     right: 0;
     width: 100%;
@@ -48,6 +54,24 @@ const List = styled.ul`
     border-radius: 100%;
     opacity: 0.8;
   }
+  .link .logo {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    background-color: ${props => props.theme.teal};
+    color: ${props => props.theme.link};
+    left: 40px;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 500ms ease, background-color 500ms ease;
+  }
+  .link .logo:hover {
+    background-color: ${props => props.theme.link};
+    color: ${props => props.theme.teal};
+    transition: color 500ms ease, background-color 500ms ease;
+  }
 `
 
 const MenuItems = () => (
@@ -55,7 +79,7 @@ const MenuItems = () => (
     <Link 
     className="link"
     activeClassName="active" 
-    to={'/'}
+    to={'/about'}
     >
       <li>About</li>
     </Link>
@@ -74,6 +98,13 @@ const MenuItems = () => (
     to={'/prose'}
     >
       <li>Prose</li>
+    </Link>
+    <Link
+    className="link"
+    activeClassName="active" 
+    to={'/'}
+    >
+      <li logo className="logo">M</li>
     </Link>
   </List> 
 )
