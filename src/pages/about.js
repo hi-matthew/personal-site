@@ -74,7 +74,7 @@ const About = ({ data, location }) => (
     <Intro>
       <Greeter>
         <Img 
-        fixed={data.matthew.childImageSharp.fixed}
+        fixed={data.me.childImageSharp.fixed}
         style={{ 
           borderRadius: "60px", 
           marginBottom: "35px",
@@ -122,7 +122,7 @@ const About = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    matthew: file(relativePath: {eq: "matthew.jpg" }) {
+    me: file(relativePath: {eq: "me.jpg" }) {
       childImageSharp {
         fixed(width: 200, height: 200) {
           ...GatsbyImageSharpFixed
