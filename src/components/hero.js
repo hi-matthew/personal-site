@@ -1,13 +1,13 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Menu from './menu'
 
 const HeroContainer = styled.div`
   flex: 1; 
-  height: 98.5vh;
-  width: 49.5%;
+  height: 100vh;
+  width: ${props => props.page === '/' ? "100vw" : "50vw"};
   position: fixed; 
 `
 
@@ -23,7 +23,7 @@ const Url = styled.span`
   letter-spacing: 2px;
   position: absolute;
   right: 20px;
-  bottom: 230px;
+  bottom: 220px;
 `
 
 const Hero = ({ page }) => (
@@ -52,7 +52,7 @@ const Hero = ({ page }) => (
         }
     `}
     render={data => 
-      <HeroContainer>
+      <HeroContainer page={page} style={{ zindex: "-1", overflow: "hidden" }}>
         <Menu/>
         <Img 
         fluid={
@@ -67,19 +67,19 @@ const Hero = ({ page }) => (
         style={{
           position: "absolute",
           width: '100%',
-          height: "98.5vh",
+          height: "100%",
           zIndex: '-1',
+          opacity: "0.95",
         }}
         />
         <div style={{
           width: "100%",
           height: "100%",
-        }}>
+          position: 'relative',
+        }}
+        >
           <Url>matthewoctober.com</Url>
         </div>
-        {/* <Link to={'/'} activeClassName="active">
-          <Logo>M</Logo>
-        </Link> */}
       </HeroContainer>
     }
   />

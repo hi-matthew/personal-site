@@ -4,6 +4,26 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import Layout from '../components/layout'
 import Hero from '../components/hero'
+import Button from "../components/button"
+
+const Outer = styled.div`
+  flex: 1;
+  color: white;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`
+
+const Inner = styled.div`
+  position: fixed;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const Intro = styled.section`
   text-align: center;
@@ -12,7 +32,8 @@ const Intro = styled.section`
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding-bottom: 50px;
+  position: relative;
+  height: 100vh;
 `
 
 const Greeter = styled.div`
@@ -40,74 +61,23 @@ const H2 = styled.h2`
   font-family: "Helvetica";
 `
 
-const ButtonContainer = styled.div`
-  width: 135px;
-  height: 45px;
-  background-color: transparent;
-  border-radius: 5px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &::before {
-    position: absolute;
-    content: '';
-    height: 10px;
-    width: 8px;
-    z-index: 5;
-    transform: translateX(-10px);
-  }
-  &::after {
-    position: absolute;
-    background-color: ${props => props.theme.teal};
-    width: 45px;
-    height: 45px;
-    left: 0;
-    top: 0;
-    font-size: 16px;
-    content: "→";
-    color: white;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 15px;
-    align-items: center;
-    z-index: 1;
-    border-radius: 100px;
-    box-sizing: border-box;
-    transform: translate(-31px);
-    transition: width 400ms ease, padding-left 400ms ease;
-  }
-  &:hover::after {
-    width: 175px;
-    transition: width 400ms ease, padding-left 400ms ease;
-    padding-left: 27px;
-  }
-  & .button-cta {
-    z-index: 2;
-    margin: 0 0;
-    transition: color 500ms ease;
-    font-size: 16px;
-    padding: 0 0;
-    color: ${props => props.theme.teal};
-    font-weight: 700;
-  }
-  &:hover .button-cta {
-    color: white;
-  }
-`
-
 const About = ({ data, location }) => (
   <Layout>
-    <div style={{ flex: '1' }}>
-      <Hero page={location.pathname}/>
-    </div>
+    <Hero page={location.pathname}/>
+    <Outer>
+      <Inner>      
+        <h1 style={{ fontSize: "3rem", width: "45%" }}>
+          Here is where I tell you my last name isn't actually October.
+        </h1>
+      </Inner>
+    </Outer>
     <Intro>
       <Greeter>
         <Img 
-        fixed={data.me.childImageSharp.fixed}
+        fixed={data.matthew.childImageSharp.fixed}
         style={{ 
-          borderRadius: "100px", 
-          marginBottom: "35px"
+          borderRadius: "60px", 
+          marginBottom: "35px",
         }}
         />
         <H2>It's nice to meet you.</H2>
@@ -136,18 +106,14 @@ const About = ({ data, location }) => (
         <p>Somewhere that's opinionated but open.</p>
         <p>Somewhere where people are happy to be.</p>
       </Details>
-      <Details>
+      <Details style={{ paddingBottom: "60px" }}>
         <H2 big>View my work</H2>
         <p>Feel free to review some of my personal projects.</p>
         <Link 
         to={"/work"}
         style={{ textDecoration: "none" }}
         >
-          <ButtonContainer>
-            <p className="button-cta">
-              Projects
-            </p>
-          </ButtonContainer>
+          <Button text='Projects'/>
         </Link>
       </Details>
     </Intro>
@@ -156,7 +122,7 @@ const About = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    me: file(relativePath: {eq: "me.jpg" }) {
+    matthew: file(relativePath: {eq: "matthew.jpg" }) {
       childImageSharp {
         fixed(width: 200, height: 200) {
           ...GatsbyImageSharpFixed

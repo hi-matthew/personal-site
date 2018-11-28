@@ -6,17 +6,21 @@ const List = styled.ul`
   position: relative;
   list-style: none;
   margin: 35px auto 0;
-  padding: 0 15%;
+  padding: 0 100px;
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   .link {
     text-decoration: none;
     color: ${props => props.theme.link};
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
+    transition: color 300ms ease;
+  }
+  .link:hover, .link.active {
+    color: ${props => props.theme.linkhover};
   }
   .link::after,
   .link .logo::after {
@@ -53,6 +57,7 @@ const List = styled.ul`
     content: '';
     border-radius: 100%;
     opacity: 0.8;
+    margin: 0 15%;
   }
   .link .logo {
     position: fixed;
@@ -104,7 +109,7 @@ const MenuItems = () => (
     activeClassName="active" 
     to={'/'}
     >
-      <li logo className="logo">M</li>
+      <li className="logo">M</li>
     </Link>
   </List> 
 )
