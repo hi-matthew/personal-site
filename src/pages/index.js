@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby' 
 import styled, { keyframes } from "styled-components"
 import Layout from '../components/layout'
-import Hero from "../components/hero"
+import HeroImg from "../components/heroImg"
 import Button from "../components/button"
 
 const FadeIn = keyframes`
@@ -18,8 +18,8 @@ const FadeIn = keyframes`
 
 const HeroText = styled.h1`
   color: white;
-  font-size: 5rem;
-  padding-left: 2rem;
+  font-size: 4.5rem;
+  /* padding-left: 2rem; */
   opacity: 0;
   transition: transform 300ms ease, opacity 300ms ease;
   animation: ${FadeIn} 1.2s ease forwards;
@@ -37,22 +37,24 @@ const HeroText = styled.h1`
   .oct {
     height: 0px;
     opacity: 0;
-    transition: height 400ms ease, opacity 400ms 300ms ease, transform 300ms 300ms ease;
+    transition: height 400ms ease, opacity 400ms 300ms ease, transform 500ms 200ms ease;
     color: ${props => props.theme.teal};
     font-size: 5rem;
     transform: translateX(100%)
-
   }
   div:hover .oct {
     height: 100px;
     opacity: 1;
     transform: translateX(0);
   }
+  @media (max-width: 500px) {
+    font-size: 4rem;
+  }
 `
 
 const IndexPage = (props) => (
   <Layout>
-    <Hero page={props.location.pathname}/>
+    <HeroImg page={props.location.pathname}/>
     <div style={{ 
       display: "flex",
       flexDirection: "column",
@@ -62,18 +64,6 @@ const IndexPage = (props) => (
       height: "100vh",
     }}
     >
-    {/* </div>
-    <div style={{ 
-      flex: '1', 
-      display: "flex", 
-      flexDirection: 'column',
-      margin: '0 auto', 
-      width: "100%", 
-      height: "100vh", 
-      alignItems: "center", 
-      justifyContent: "center" 
-    }}
-    > */}
       <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October</span></div></HeroText>
       <Link 
         to={"/about"}

@@ -1,12 +1,14 @@
 import React from 'react'
 import Layout from "../components/layout"
-import Hero from "../components/hero"
+import HeroImg from "../components/heroImg"
+import HeroShell, { HeroText } from "../components/heroStyles"
 
 const Prose = (props) => (
   <Layout>
-    <div style={{ flex: '1' }}>
-      <Hero page={props.location.pathname}/>
-    </div>
+    <HeroShell>
+      <HeroImg page={props.location.pathname}/>
+      <HeroText>This is where I ruminate out loud.</HeroText>
+    </HeroShell>
     <div style={{ 
       flex: '1', 
       display: "flex", 

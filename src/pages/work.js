@@ -1,15 +1,17 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Hero from "../components/hero"
+import React from "react"
+import { Link } from "gatsby"
+import styled from "styled-components"
+import HeroImg from "../components/heroImg"
 import Button from "../components/button"
-
-import Layout from '../components/layout'
+import HeroShell, { HeroText } from "../components/heroStyles"
+import Layout from "../components/layout"
 
 const Work = (props) => (
   <Layout>
-      <div style={{ flex: "1" }}>
-        <Hero page={props.location.pathname}/>
-      </div>
+      <HeroShell>
+        <HeroImg page={props.location.pathname}/>
+        <HeroText>This is where you judge me.</HeroText>
+      </HeroShell>
       <div style={{ 
         flex: '1', 
         display: "flex", 
@@ -18,10 +20,14 @@ const Work = (props) => (
         width: "100%", 
         height: "100vh", 
         alignItems: "center", 
-        justifyContent: "center" 
       }}
       >
-        <h1>Where I showcase my work</h1>
+        <h1
+        style={{
+          marginTop: "65px",
+        }}
+        >
+        Welcome to my body of work.</h1>
         <Link 
           to={"/prose"}
           style={{ textDecoration: "none" }}

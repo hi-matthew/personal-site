@@ -12,6 +12,7 @@ const List = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: inherit;
   .link {
     text-decoration: none;
     color: ${props => props.theme.link};
@@ -58,6 +59,9 @@ const List = styled.ul`
     border-radius: 100%;
     opacity: 0.8;
     margin: 0 15%;
+    @media (max-width: 1150px) {
+      margin: 0 20%;
+    }
   }
   .link .logo {
     position: fixed;
@@ -71,6 +75,9 @@ const List = styled.ul`
     justify-content: center;
     align-items: center;
     transition: color 500ms ease, background-color 500ms ease;
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
   .link .logo:hover {
     background-color: ${props => props.theme.link};

@@ -3,27 +3,9 @@ import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
 import Layout from '../components/layout'
-import Hero from '../components/hero'
+import HeroImg from '../components/heroImg'
 import Button from "../components/button"
-
-const Outer = styled.div`
-  flex: 1;
-  color: white;
-  height: 100vh;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`
-
-const Inner = styled.div`
-  position: fixed;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+import HeroShell, { HeroText } from "../components/heroStyles"
 
 const Intro = styled.section`
   text-align: center;
@@ -33,7 +15,8 @@ const Intro = styled.section`
   align-items: center;
   flex: 1;
   position: relative;
-  height: 100vh;
+  height: auto;
+  padding-bottom: 60px;
 `
 
 const Greeter = styled.div`
@@ -44,14 +27,19 @@ const Greeter = styled.div`
   margin-top: 65px;
   position: relative;
   width: 100%;
-  height: auto;
+`
+
+const ImageFrame = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin-bottom: 35px;
 `
 
 const Details = styled(Greeter)`
   margin-top: 90px;
   position: relative;
   width: 100%;
-  height: auto;
 `
 
 const H2 = styled.h2`
@@ -63,23 +51,23 @@ const H2 = styled.h2`
 
 const About = ({ data, location }) => (
   <Layout>
-    <Hero page={location.pathname}/>
-    <Outer>
-      <Inner>      
-        <h1 style={{ fontSize: "3rem", width: "45%" }}>
-          Here is where I tell you my last name isn't actually October.
-        </h1>
-      </Inner>
-    </Outer>
+    <HeroShell>
+      <HeroImg page={location.pathname}/>
+      <HeroText>
+        This is where I tell you my last name is not actually October.
+      </HeroText>
+    </HeroShell>
     <Intro>
       <Greeter>
-        <Img 
-        fixed={data.me.childImageSharp.fixed}
-        style={{ 
-          borderRadius: "60px", 
-          marginBottom: "35px",
-        }}
-        />
+        <ImageFrame>
+          <Img 
+          fluid={data.me.childImageSharp.fluid}
+          style={{ 
+            borderRadius: "60px", 
+            marginBottom: "35px",
+          }}
+          />
+        </ImageFrame>
         <H2>It's nice to meet you.</H2>
         <p>I'm a self-taught developer based in Phoenix looking to break into my first professional role. My goal is to work with brands who instill happiness in others.</p>
       </Greeter>
@@ -106,7 +94,7 @@ const About = ({ data, location }) => (
         <p>Somewhere that's opinionated but open.</p>
         <p>Somewhere where people are happy to be.</p>
       </Details>
-      <Details style={{ paddingBottom: "60px" }}>
+      <Details>
         <H2 big>View my work</H2>
         <p>Feel free to review some of my personal projects.</p>
         <Link 
@@ -124,8 +112,8 @@ export const query = graphql`
   query {
     me: file(relativePath: {eq: "me.jpg" }) {
       childImageSharp {
-        fixed(width: 200, height: 200) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 400, maxHeight: 400) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
