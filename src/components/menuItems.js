@@ -19,6 +19,7 @@ const List = styled.ul`
     font-size: 18px;
     position: relative;
     transition: color 300ms ease;
+    font-family: "raleway";
   }
   .link:hover, .link.active {
     color: ${props => props.theme.linkhover};
@@ -75,6 +76,7 @@ const List = styled.ul`
     justify-content: center;
     align-items: center;
     transition: color 500ms ease, background-color 500ms ease;
+    font-family: 'Helvetica';
     @media (max-width: 700px) {
       display: none;
     }

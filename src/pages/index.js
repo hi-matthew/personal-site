@@ -40,7 +40,9 @@ const HeroText = styled.h1`
     transition: height 400ms ease, opacity 400ms 300ms ease, transform 500ms 200ms ease;
     color: ${props => props.theme.teal};
     font-size: 5rem;
-    transform: translateX(100%)
+    transform: translateX(100%);
+    font-family: Helvetica;
+    font-weight: 700;
   }
   div:hover .oct {
     height: 100px;
@@ -64,7 +66,7 @@ const IndexPage = (props) => (
       height: "100vh",
     }}
     >
-      <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October</span></div></HeroText>
+      <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October.</span></div></HeroText>
       <Link 
         to={"/about"}
         style={{ textDecoration: "none" }}

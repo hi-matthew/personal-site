@@ -17,8 +17,12 @@ const GlobalStyle = createGlobalStyle`
    }
    p, span {
     line-height: 1.5; 
-    font-size: 21px; 
+    font-size: 19px; 
     color: ${props => props.theme.lightblack}; 
+    font-weight: 300;
+    font-family: "Raleway", "serif";
+    font-weight: 100;
+    font-style: normal;
   }
 `
 
@@ -53,6 +57,7 @@ const Layout = ({ children }) => (
           >
             <html lang="en" />
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:300|Raleway:300" rel="stylesheet" />
           </Helmet>
           <GlobalStyle />
           <div

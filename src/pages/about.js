@@ -1,11 +1,32 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import Layout from '../components/layout'
 import HeroImg from '../components/heroImg'
 import Button from "../components/button"
 import HeroShell, { HeroText } from "../components/heroStyles"
+
+const SwipeRight = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(300px);
+  }
+  45% {
+    opacity: 0;
+  }
+  66% {
+    transform: translateX(-500px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+`
 
 const Intro = styled.section`
   text-align: center;
@@ -29,15 +50,8 @@ const Greeter = styled.div`
   width: 100%;
 `
 
-const ImageFrame = styled.div`
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  margin-bottom: 35px;
-`
-
 const Details = styled(Greeter)`
-  margin-top: 90px;
+  margin-top: 45px;
   position: relative;
   width: 100%;
 `
@@ -45,8 +59,20 @@ const Details = styled(Greeter)`
 const H2 = styled.h2`
   color: ${props => props.theme.darkblack};
   font-size: ${props => props.big ? "40px" : "28px"};
-  margin-bottom: ${props => props.big ? "60px" : "30px"};
+  padding-top: ${props => props.plus ? "75px" : "30px"};
+  margin: 0 0 30px;
   font-family: "Helvetica";
+  span {
+    margin: 0 0;
+    font-size: 40px;
+    font-family: "Helvetica";
+    font-weight: 700;
+    display: block;
+    overflow: hidden;
+  }
+  &:hover span span {
+    animation: ${SwipeRight} 600ms ease forwards;
+  }
 `
 
 const About = ({ data, location }) => (
@@ -59,21 +85,29 @@ const About = ({ data, location }) => (
     </HeroShell>
     <Intro>
       <Greeter>
-        <ImageFrame>
-          <Img 
-          fluid={data.me.childImageSharp.fluid}
-          style={{ 
-            borderRadius: "60px", 
-            marginBottom: "35px",
-          }}
-          />
-        </ImageFrame>
-        <H2>It's nice to meet you.</H2>
-        <p>I'm a self-taught developer based in Phoenix looking to break into my first professional role. My goal is to work with brands who instill happiness in others.</p>
+        <Img 
+        fixed={data.matthew.childImageSharp.fixed}
+        style={{ 
+          borderRadius: "100px", 
+          marginBottom: "15px",
+        }}
+        />
+        <H2 big>It's nice to meet you.</H2>
+        <p>
+          So, my last name is not October. October is only my birth month. Though, I use Matthew October as a moniker in order to gain more continuity across accounts. Also, I'd be lying if I were to say the dot com TLD didn't have some influence on me. I know, it's weird, but it's what you do when both your first and last name are generic and you share the internet with billions of people.
+        </p>
       </Greeter>
       <Details>
-        <H2 big>What I'm looking for</H2>
-        <p>Somewhere I can continue mastering technologies specific or similar to:</p>
+        <H2 big>I'm job hungry.</H2>
+        <p>
+          I'm a self-taught developer based in Phoenix looking to break into my first professional developer role. My goal is to work with brands who instill happiness in others.
+        </p>
+        <H2 big plus>
+          <span><span>Swipe right</span></span> worthy workplace qualities.
+        </H2>
+        <p>
+          Somewhere I can continue mastering technologies specific or similar to:
+        </p>
         <div style={{ 
         display: "flex", 
         justifyContent: "space-around",
@@ -110,10 +144,10 @@ const About = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    me: file(relativePath: {eq: "me.jpg" }) {
+    matthew: file(relativePath: {eq: "matthew.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 400) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 200, height: 200) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
