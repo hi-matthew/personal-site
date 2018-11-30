@@ -61,9 +61,9 @@ const HeroImg = ({ page }) => (
         fluid={
         page === '/'
         ? data.leaves.childImageSharp.fluid
-        : page === '/work' || '/work/'
+        : page === '/work' || page === '/work/'
         ? data.museum.childImageSharp.fluid
-        : page === '/about' || '/about/'
+        : page === '/about' || page === '/about/'
         ? data.wave.childImageSharp.fluid
         : data.prose.childImageSharp.fluid
         }
