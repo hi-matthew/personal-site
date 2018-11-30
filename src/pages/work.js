@@ -90,7 +90,7 @@ class Work extends Component {
             <Greeter>
               <h1
               style={{
-                marginTop: "65px",
+                marginTop: "50px",
                 textAlign: "center",
               }}
               >

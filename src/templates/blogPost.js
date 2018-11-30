@@ -20,7 +20,7 @@ const Header = styled.div`
   position: fixed;
   color: ${props => props.theme.darkblack};;
   background-color: white;
-  width: 49%;
+  width: 49.5%;
   height: 70px;
   right: 0;
   display: flex;
@@ -30,6 +30,7 @@ const Header = styled.div`
   box-sizing: border-box;
   font-weight: 800;
   opacity: 0.9;
+  box-shadow: 1px 1px 5px ${props => props.theme.lightblack};
   .link {
     text-decoration: none;
     color: ${props => props.theme.darkblack};
@@ -84,7 +85,14 @@ export default ({ data, location }) => {
         paddingBottom: "60px",
       }}
       >
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: "20px" }}>
+        <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: "20px"
+        }}
+        >
           <Text dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </div>

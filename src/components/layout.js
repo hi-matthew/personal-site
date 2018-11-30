@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 100;
     font-style: normal;
   }
+  ::selection {
+    color: white;
+    background-color: #D7337C;
+  }
 `
 
 const theme = {

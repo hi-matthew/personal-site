@@ -75,75 +75,78 @@ const H2 = styled.h2`
   }
 `
 
-const About = ({ data, location }) => (
-  <Layout>
-    <HeroShell>
-      <HeroImg page={location.pathname}/>
-      <HeroText>
-        This is where I tell you my last name is not actually October
-      </HeroText>
-    </HeroShell>
-    <Intro>
-      <Greeter>
-        <Img
-        fixed={data.matthew.childImageSharp.fixed}
-        style={{
-          borderRadius: "100px",
-          marginBottom: "15px",
-        }}
-        />
-        <H2 big>It's nice to meet you</H2>
-        <p>
-          So, my last name is not October. October is only my birth month. Though, I use Matthew October as a moniker in order to gain more continuity across accounts. Also, I'd be lying if I were to say the dot com TLD didn't have some influence on me. I know, it's weird, but it's what you do when both your first and last name are generic and you share the internet with billions of people.
-        </p>
-      </Greeter>
-      <Details>
-        <H2 big>I'm job hungry</H2>
-        <p>
-          I'm a self-taught JavaScript developer--based in Phoenix--looking to break into my first professional developer role. I'm open to employment in the following greater city areas: Austin, Denver, Los Angeles, Phoenix, San Diego.</p>
-        <p>
-          My goal is to find a workplace that embodies grit and craftsmanship. There are numerous websites and applications that, in earnest, make me feel good just by having used them.
-        </p>
-        <p>My aim is to reciprocate that feeling for others.</p>
-        <H2 big plus>
-          <span><span>Swipe right</span></span> worthy workplace qualities
-        </H2>
-        <p>
-          Somewhere I can continue mastering technologies specific or similar to:
-        </p>
-        <div style={{
-        display: "flex",
-        justifyContent: "space-around",
-        width: "100%",
-        marginBottom: "1.45rem"
-        }}>
-          <Img fixed={data.js.childImageSharp.fixed} title="JavaScript"/>
-          <Img fixed={data.react.childImageSharp.fixed} title="React"/>
-          <Img fixed={data.redux.childImageSharp.fixed} title="Redux"/>
-          <Img fixed={data.node.childImageSharp.fixed} title="Node"/>
-          <Img fixed={data.graphQL.childImageSharp.fixed} title="GraphQL"/>
-          <Img fixed={data.gatsbyIcon.childImageSharp.fixed} title="Gatsby"/>
-          <Img fixed={data.styled.childImageSharp.fixed} title="Styled Components"/>
-        </div>
-        <p>Somewhere I'm able to learn from my peers.</p>
-        <p>Somewhere I'm challenged and held accountable.</p>
-        <p>Somewhere that takes pride in their work.</p>
-        <p>Somewhere that's opinionated but open.</p>
-        <p>Somewhere where people are happy.</p>
-      </Details>
-      <Details>
-        <H2 big>I like to build things</H2>
-        <p>Feel free to review some of my personal projects.</p>
-        <Link
-        to={"/work"}
-        style={{ textDecoration: "none" }}
-        >
-          <Button text='Projects'/>
-        </Link>
-      </Details>
-    </Intro>
-  </Layout>
-)
+const About = (props) => {
+  const { data, location } = props;
+  return (
+    <Layout>
+      <HeroShell>
+        <HeroImg page={location.pathname}/>
+        <HeroText>
+          This is where I tell you my last name is not actually October
+        </HeroText>
+      </HeroShell>
+      <Intro>
+        <Greeter>
+          <Img
+          fixed={data.matthew.childImageSharp.fixed}
+          style={{
+            borderRadius: "100px",
+            marginBottom: "15px",
+          }}
+          />
+          <H2 big>It's nice to meet you</H2>
+          <p>
+            So, my last name is not October. October is only my birth month. Though, I use Matthew October as a moniker in order to gain more continuity across accounts. Also, I'd be lying if I were to say the dot com TLD didn't have some influence on me. I know, it's weird, but it's what you do when both your first and last name are generic and you share the internet with billions of people.
+          </p>
+        </Greeter>
+        <Details>
+          <H2 big>I'm job hungry</H2>
+          <p>
+            I'm a self-taught JavaScript developer--based in Phoenix--looking to break into my first professional developer role. I'm open to employment in the following greater city areas: Austin, Denver, Los Angeles, Phoenix, San Diego.</p>
+          <p>
+            My goal is to find a workplace that embodies grit and craftsmanship. There are numerous websites and applications that, in earnest, make me feel good just by having used them.
+          </p>
+          <p>My aim is to reciprocate that feeling for others.</p>
+          <H2 big plus>
+            <span><span>Swipe right</span></span> worthy workplace qualities
+          </H2>
+          <p>
+            Somewhere I can continue mastering technologies specific or similar to:
+          </p>
+          <div style={{
+          display: "flex",
+          justifyContent: "space-around",
+          width: "100%",
+          marginBottom: "1.45rem"
+          }}>
+            <Img fixed={data.js.childImageSharp.fixed} title="JavaScript"/>
+            <Img fixed={data.react.childImageSharp.fixed} title="React"/>
+            <Img fixed={data.redux.childImageSharp.fixed} title="Redux"/>
+            <Img fixed={data.node.childImageSharp.fixed} title="Node"/>
+            <Img fixed={data.graphQL.childImageSharp.fixed} title="GraphQL"/>
+            <Img fixed={data.gatsbyIcon.childImageSharp.fixed} title="Gatsby"/>
+            <Img fixed={data.styled.childImageSharp.fixed} title="Styled Components"/>
+          </div>
+          <p>Somewhere I'm able to learn from my peers.</p>
+          <p>Somewhere I'm challenged and held accountable.</p>
+          <p>Somewhere that takes pride in their work.</p>
+          <p>Somewhere that's opinionated but open.</p>
+          <p>Somewhere where people are happy.</p>
+        </Details>
+        <Details>
+          <H2 big>I like to build things</H2>
+          <p>Feel free to review some of my personal projects.</p>
+          <Link
+          to={"/work"}
+          style={{ textDecoration: "none" }}
+          >
+            <Button text='Projects'/>
+          </Link>
+        </Details>
+      </Intro>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query {

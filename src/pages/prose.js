@@ -12,12 +12,12 @@ const PostListing = styled.div`
   align-items: center;
   margin-bottom: 30px;
   width: 80%;
-  border: 5px #222222 solid;
+  border: 5px ${props => props.theme.darkblack} solid;
   padding: 20px 30px;
   box-sizing: border-box;
   transition: background-color 400ms ease;
   &:hover {
-    background-color: #222222;
+    background-color: ${props => props.theme.darkblack};
   }
   &:hover h4{
     color: ${props => props.theme.teal}
@@ -28,7 +28,7 @@ const PostListing = styled.div`
   }
   .postListing {
     text-decoration: none;
-    color: #333333;
+    color: ${props => props.theme.darkblack};
     transition: color 400ms ease;
     display: flex;
     flex-direction: column;
@@ -45,44 +45,48 @@ const PostListing = styled.div`
   }
 `
 
-const Prose = ({ location, data }) => (
-  <Layout>
-    <HeroShell>
-      <HeroImg page={location.pathname}/>
-      <HeroText>This is where I ruminate out loud</HeroText>
-    </HeroShell>
-    <div style={{
-      flex: '1',
-      display: "flex",
-      flexDirection: 'column',
-      margin: '65px auto 0',
-      width: "100%",
-      alignItems: "center",
-      paddingBottom: "45px",
-    }}
-    >
-      <h1 style={{
-        textAlign: "center",
-        marginBottom: "30px"
+const Prose = (props) => {
+  const { location, data } = props;
+  return (
+    <Layout>
+      <HeroShell>
+        <HeroImg page={location.pathname}/>
+        <HeroText>This is where I ruminate out loud</HeroText>
+      </HeroShell>
+      <div style={{
+        flex: '1',
+        display: "flex",
+        flexDirection: 'column',
+        margin: '50px auto 0',
+        width: "100%",
+        alignItems: "center",
+        paddingBottom: "45px",
       }}
       >
-        Thoughts <br/><span style={{ fontSize: "1.25rem", fontFamily:"inherit", fontWeight: "400"}}>by Matthew October</span>
-      </h1>
-      {data.allMarkdownRemark.edges.map(({node}) => (
-        <PostListing>
-          <Link
-          className="postListing"
-          to={`${node.fields.slug}`}
-          >
-            <h2>{node.frontmatter.title}</h2>
-            <h4>{node.frontmatter.date}</h4>
-            <p>{node.excerpt}</p>
-          </Link>
-        </PostListing>
-      ))}
-    </div>
-  </Layout>
-)
+        <h1 style={{
+          textAlign: "center",
+          marginBottom: "45px",
+          color: "#343434",
+        }}
+        >
+          Thoughts <br/><span style={{ fontSize: "1.25rem", fontFamily:"inherit", fontWeight: "400", color: "#343434"}}>by Matthew October</span>
+        </h1>
+        {data.allMarkdownRemark.edges.map(({node}) => (
+          <PostListing>
+            <Link
+            className="postListing"
+            to={`${node.fields.slug}`}
+            >
+              <h2>{node.frontmatter.title}</h2>
+              <h4>{node.frontmatter.date}</h4>
+              <p>{node.excerpt}</p>
+            </Link>
+          </PostListing>
+        ))}
+      </div>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query {
