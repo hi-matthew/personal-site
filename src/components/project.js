@@ -34,6 +34,7 @@ const Frame = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: -15px;
+    font-weight: 500;
   }
   & .link {
     text-decoration: none;

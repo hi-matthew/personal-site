@@ -97,14 +97,22 @@ class Work extends Component {
               icons={logos(techStack)}
               />
             ))}
-            <h2>I like words too.</h2>
-            <p>I need to write more, but you'll be able to find a couple posts for now.</p>
-            <Link
-              to={"/prose"}
-              style={{ textDecoration: "none", transform: "translateX(0px)" }}
-            >
-              <Button text='Writing'/>
-            </Link>
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "85%",
+              justifyContent: "center",
+              textAlign: "center",
+            }}>
+              <h2>I like words too.</h2>
+              <p>I need to write more, but you'll be able to find a couple posts for now.</p>
+            </div>
+              <Link
+                to={"/prose"}
+                style={{ textDecoration: "none", width: "25%" }}
+              >
+                <Button text='Writing'/>
+              </Link>
           </div>
       </Layout>
     )
