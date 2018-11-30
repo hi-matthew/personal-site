@@ -85,10 +85,10 @@ const About = ({ data, location }) => (
     </HeroShell>
     <Intro>
       <Greeter>
-        <Img 
+        <Img
         fixed={data.matthew.childImageSharp.fixed}
-        style={{ 
-          borderRadius: "100px", 
+        style={{
+          borderRadius: "100px",
           marginBottom: "15px",
         }}
         />
@@ -100,16 +100,19 @@ const About = ({ data, location }) => (
       <Details>
         <H2 big>I'm job hungry.</H2>
         <p>
-          I'm a self-taught developer based in Phoenix looking to break into my first professional developer role. My goal is to work with brands who instill happiness in others.
+          I'm a self-taught JavaScript developer--based in Phoenix--looking to break into my first professional developer role. I'm open to employment in the following greater city areas: Austin, Denver, Los Angeles, Phoenix, San Diego.</p>
+        <p>
+          My goal is to find a workplace that embodies grit and craftsmanship. There are numerous websites and applications that, in earnest, make me feel good just by having used them.
         </p>
+        <p>My aim is to reciprocate that feeling for others.</p>
         <H2 big plus>
           <span><span>Swipe right</span></span> worthy workplace qualities.
         </H2>
         <p>
           Somewhere I can continue mastering technologies specific or similar to:
         </p>
-        <div style={{ 
-        display: "flex", 
+        <div style={{
+        display: "flex",
         justifyContent: "space-around",
         width: "100%",
         marginBottom: "1.45rem"
@@ -126,12 +129,12 @@ const About = ({ data, location }) => (
         <p>Somewhere I'm challenged and held accountable.</p>
         <p>Somewhere that takes pride in their work.</p>
         <p>Somewhere that's opinionated but open.</p>
-        <p>Somewhere where people are happy to be.</p>
+        <p>Somewhere where people are happy.</p>
       </Details>
       <Details>
-        <H2 big>View my work</H2>
+        <H2 big>I like to build things.</H2>
         <p>Feel free to review some of my personal projects.</p>
-        <Link 
+        <Link
         to={"/work"}
         style={{ textDecoration: "none" }}
         >
@@ -144,32 +147,32 @@ const About = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    matthew: file(relativePath: {eq: "matthew.jpg" }) {
+    matthew: file(relativePath: {eq: "headshot/matthew.jpg" }) {
       childImageSharp {
         fixed(width: 200, height: 200) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    react: file(relativePath: {eq: "react.png"}) {
+    react: file(relativePath: {eq: "logos/react.png"}) {
       ...techStack
     }
-    redux: file(relativePath: {eq: "redux.png"}) {
+    redux: file(relativePath: {eq: "logos/redux.png"}) {
       ...techStack
     }
-    js: file(relativePath: {eq: "js.jpg"}) {
+    js: file(relativePath: {eq: "logos/js.jpg"}) {
       ...techStack
     }
-    node: file(relativePath: {eq: "node.png"}) {
+    node: file(relativePath: {eq: "logos/node.png"}) {
       ...techStack
     }
-    styled: file(relativePath: {eq: "styled.png"}) {
+    styled: file(relativePath: {eq: "logos/styled.png"}) {
       ...techStack
     }
-    gatsbyIcon: file(relativePath: {eq: "gatsby-icon.png"}) {
+    gatsbyIcon: file(relativePath: {eq: "logos/gatsby-icon.png"}) {
       ...techStack
     }
-    graphQL: file(relativePath: {eq: "graphQL.png"}) {
+    graphQL: file(relativePath: {eq: "logos/graphQL.png"}) {
       ...techStack
     }
   }

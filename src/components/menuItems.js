@@ -90,9 +90,9 @@ const List = styled.ul`
 
 const MenuItems = () => (
   <List>
-    <Link 
+    <Link
     className="link"
-    activeClassName="active" 
+    activeClassName="active"
     to={'/about'}
     >
       <li>About</li>
@@ -100,7 +100,7 @@ const MenuItems = () => (
     <div className="circle" />
     <Link
     className="link"
-    activeClassName="active" 
+    activeClassName="active"
     to={'/work'}
     >
       <li>Work</li>
@@ -108,19 +108,19 @@ const MenuItems = () => (
     <div className="circle" />
     <Link
     className="link"
-    activeClassName="active" 
+    activeClassName="active"
     to={'/prose'}
     >
       <li>Prose</li>
     </Link>
     <Link
     className="link"
-    activeClassName="active" 
+    activeClassName="active"
     to={'/'}
     >
       <li className="logo">M</li>
     </Link>
-  </List> 
+  </List>
 )
 
 export default MenuItems;

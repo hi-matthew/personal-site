@@ -2,26 +2,20 @@ import React from "react"
 import styled from "styled-components"
 
 const ButtonContainer = styled.div`
-  width: 135px;
+  width: 100%;
   height: 45px;
   background-color: transparent;
   border-radius: 5px;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  margin-top: 30px;
   &::before {
-    position: absolute;
-    content: '';
-    height: 10px;
-    width: 8px;
-    z-index: 5;
-    transform: translateX(-10px);
-  }
-  &::after {
     position: absolute;
     background-color: ${props => props.theme.teal};
     width: 45px;
+    max-width: 100%;
     height: 45px;
     left: 0;
     top: 0;
@@ -35,20 +29,20 @@ const ButtonContainer = styled.div`
     z-index: 1;
     border-radius: 100px;
     box-sizing: border-box;
-    transform: translate(-31px);
     transition: width 400ms ease, padding-left 400ms ease;
   }
-  &:hover::after {
-    width: 175px;
+  &:hover::before {
+    width: 100%;
     transition: width 400ms ease, padding-left 400ms ease;
     padding-left: 27px;
   }
   & .button-cta {
     z-index: 2;
+    position: relative;
     margin: 0 0;
     transition: color 500ms ease;
     font-size: 16px;
-    padding: 0 0;
+    padding: 0 35px 0 60px;
     color: ${props => props.theme.teal};
     font-weight: 700;
   }

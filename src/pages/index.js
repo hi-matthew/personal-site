@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby' 
+import { Link } from 'gatsby'
 import styled, { keyframes } from "styled-components"
 import Layout from '../components/layout'
 import HeroImg from "../components/heroImg"
@@ -57,7 +57,7 @@ const HeroText = styled.h1`
 const IndexPage = (props) => (
   <Layout>
     <HeroImg page={props.location.pathname}/>
-    <div style={{ 
+    <div style={{
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -67,7 +67,7 @@ const IndexPage = (props) => (
     }}
     >
       <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October.</span></div></HeroText>
-      <Link 
+      <Link
         to={"/about"}
         style={{ textDecoration: "none" }}
       >

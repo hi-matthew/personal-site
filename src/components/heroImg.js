@@ -33,16 +33,16 @@ const HeroImg = ({ page }) => (
   <StaticQuery
     query={graphql`
       query {
-        leaves: file(relativePath: { eq: "leaves.jpg" }) {
+        leaves: file(relativePath: { eq: "backgrounds/leaves.jpg" }) {
           ...mainImage
         }
-        museum: file(relativePath: { eq: "museum.jpg" }) {
+        museum: file(relativePath: { eq: "backgrounds/museum.jpg" }) {
           ...mainImage
         }
-        prose: file(relativePath: { eq: "prose.jpg" }) {
+        prose: file(relativePath: { eq: "backgrounds/prose.jpg" }) {
           ...mainImage
         }
-        wave: file(relativePath: { eq: "wave.jpg" }) {
+        wave: file(relativePath: { eq: "backgrounds/wave.jpg" }) {
           ...mainImage
         }
       }
