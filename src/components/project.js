@@ -49,7 +49,7 @@ const TechLogos = styled.ul`
   padding: 0 0;
   margin: 0 0;
   .logo ~ .logo {
-    margin-left: 15px;
+    margin-left: 30px;
   }
 `
 
@@ -57,7 +57,7 @@ const ButtonBin = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-left: 60px;
+  padding-left: 15px;
   & .link:last-child {
     margin-left: 45px;
   }

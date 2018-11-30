@@ -80,7 +80,7 @@ const About = ({ data, location }) => (
     <HeroShell>
       <HeroImg page={location.pathname}/>
       <HeroText>
-        This is where I tell you my last name is not actually October.
+        This is where I tell you my last name is not actually October
       </HeroText>
     </HeroShell>
     <Intro>
@@ -92,13 +92,13 @@ const About = ({ data, location }) => (
           marginBottom: "15px",
         }}
         />
-        <H2 big>It's nice to meet you.</H2>
+        <H2 big>It's nice to meet you</H2>
         <p>
           So, my last name is not October. October is only my birth month. Though, I use Matthew October as a moniker in order to gain more continuity across accounts. Also, I'd be lying if I were to say the dot com TLD didn't have some influence on me. I know, it's weird, but it's what you do when both your first and last name are generic and you share the internet with billions of people.
         </p>
       </Greeter>
       <Details>
-        <H2 big>I'm job hungry.</H2>
+        <H2 big>I'm job hungry</H2>
         <p>
           I'm a self-taught JavaScript developer--based in Phoenix--looking to break into my first professional developer role. I'm open to employment in the following greater city areas: Austin, Denver, Los Angeles, Phoenix, San Diego.</p>
         <p>
@@ -106,7 +106,7 @@ const About = ({ data, location }) => (
         </p>
         <p>My aim is to reciprocate that feeling for others.</p>
         <H2 big plus>
-          <span><span>Swipe right</span></span> worthy workplace qualities.
+          <span><span>Swipe right</span></span> worthy workplace qualities
         </H2>
         <p>
           Somewhere I can continue mastering technologies specific or similar to:
@@ -132,7 +132,7 @@ const About = ({ data, location }) => (
         <p>Somewhere where people are happy.</p>
       </Details>
       <Details>
-        <H2 big>I like to build things.</H2>
+        <H2 big>I like to build things</H2>
         <p>Feel free to review some of my personal projects.</p>
         <Link
         to={"/work"}

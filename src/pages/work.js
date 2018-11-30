@@ -17,6 +17,17 @@ const FocusShadow = styled.div`
   z-index: 4;
 `
 
+const Greeter = styled.div`
+  position: relative;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 25px 0 0;
+  justify-content: center;
+  align-items: center;
+`
+
 class Work extends Component {
   state = {
     scale: Array(5).fill(false),
@@ -60,28 +71,39 @@ class Work extends Component {
           />
           <HeroShell>
             <HeroImg page={location.pathname}/>
-            <HeroText>This is where you judge me.</HeroText>
+            <HeroText>This is where you judge me</HeroText>
           </HeroShell>
           <div
           style={{
+            position: "relative",
             flex: '1',
             display: "flex",
             flexDirection: 'column',
+            alignItems: "center",
             margin: '0 auto',
             width: "100%",
             height: "auto",
-            alignItems: "center",
             paddingBottom: "60px",
             backgroundColor: `${props => props.truthy} ? grey : white`,
           }}
           >
-            <h1
-            style={{
-              marginTop: "65px",
-            }}
-            >
-              Welcome to my body of work.
-            </h1>
+            <Greeter>
+              <h1
+              style={{
+                marginTop: "65px",
+                textAlign: "center",
+              }}
+              >
+                Welcome to my <br/>body of work
+              </h1>
+              <p
+              style={{
+                textAlign: "center",
+              }}
+              >
+                Feel free to take a look around.
+              </p>
+            </Greeter>
             {myProjects.map(({index, title, demoUrl, github, desc, techStack }) => (
               <Project
               index={index}

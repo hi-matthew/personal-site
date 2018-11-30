@@ -65,6 +65,8 @@ const HeroImg = ({ page }) => (
         ? data.museum.childImageSharp.fluid
         : page === '/about' || page === '/about/'
         ? data.wave.childImageSharp.fluid
+        : page === '/about' || page === '/about/'
+        ? data.prose.childImageSharp.fluid
         : data.prose.childImageSharp.fluid
         }
         style={{

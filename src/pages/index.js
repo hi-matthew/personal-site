@@ -66,7 +66,7 @@ const IndexPage = (props) => (
       height: "100vh",
     }}
     >
-      <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October.</span></div></HeroText>
+      <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October</span></div></HeroText>
       <Link
         to={"/about"}
         style={{ textDecoration: "none" }}
