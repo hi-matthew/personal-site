@@ -5,10 +5,10 @@ import Img from 'gatsby-image'
 import Menu from './menu'
 
 const HeroContainer = styled.div`
-  flex: 1; 
+  flex: 1;
   height: 100vh;
   width: ${props => props.page === '/' ? "100vw" : "50vw"};
-  position: fixed; 
+  position: fixed;
 `
 
 const Url = styled.span`
@@ -54,19 +54,19 @@ const HeroImg = ({ page }) => (
           }
         }
     `}
-    render={data => 
+    render={data =>
       <HeroContainer page={page} style={{ zindex: "-1", overflow: "hidden" }}>
         <Menu/>
-        <Img 
+        <Img
         fluid={
         page === '/'
         ? data.leaves.childImageSharp.fluid
-        : page === '/work'
+        : page === '/work' || '/work/'
         ? data.museum.childImageSharp.fluid
-        : page === '/about'
+        : page === '/about' || '/about/'
         ? data.wave.childImageSharp.fluid
         : data.prose.childImageSharp.fluid
-        } 
+        }
         style={{
           position: "absolute",
           width: '100%',
