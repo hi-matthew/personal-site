@@ -12,14 +12,14 @@ const Frame = styled.div`
   padding-bottom: 50px;
   & .project {
     margin: 30px 0;
-    transition: transform 1s ease, box-shadow 1s ease;
+    transition: transform 500ms ease, box-shadow 500ms ease;
     border-radius: 5px;
     width: 100%;
     height: 100%;
     position: relative;
     cursor: pointer;
-    transform: ${props => props.scale ? "scale(1.5) translateX(-45%)" : null};
-    z-index: ${props => props.scale ? "6" : "5"};
+    transform: ${props => props.scale ? "scale(1.75) translateX(-35%)" : null};
+    z-index: ${props => props.scale ? "5" : "4"};
     box-shadow: ${props => props.scale
       ? `10px 10px 30px ${props.theme.darkblack}`
       : `5px 5px 10px ${props.theme.darkblack}`
@@ -73,7 +73,7 @@ const Project = ({ url, github, index, image, title, scale, scaleBoolean, desc, 
     <h2 style={{textAlign: "center"}}>{title}</h2>
     <TechLogos>
       {icons.map(logo => (
-        <Img className="logo" fixed={logo} />
+        <Img className="logo" key={logo.src} fixed={logo} />
       ))}
     </TechLogos>
     <p style={{

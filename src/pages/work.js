@@ -1,11 +1,21 @@
 import React, { Component } from "react"
 import { graphql, Link } from "gatsby"
+import styled from "styled-components"
 import HeroImg from "../components/heroImg"
 import Button from "../components/button"
 import HeroShell, { HeroText } from "../components/heroStyles"
 import Layout from "../components/layout"
 import Project from "../components/project"
 import myProjects from "../projectList"
+
+const FocusShadow = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: ${props => props.isImageEnlarged ? "100%" : "0%"};
+  transition: background-color 500ms ease, height 500ms ease;
+  background-color: ${props => props.isImageEnlarged ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
+  z-index: 4;
+`
 
 class Work extends Component {
   state = {
@@ -18,7 +28,13 @@ class Work extends Component {
     this.setState({ scale });
   }
 
+  resetScale = () => {
+    const scale = Array(5).fill(false);
+    this.setState({scale});
+  }
+
   render() {
+    const truthy = Object.values(this.state.scale).some(each => each===true);
     const { data, location } = this.props;
     const image = (index) => {
       return index === "0"
@@ -35,13 +51,19 @@ class Work extends Component {
 
       return icons;
     }
+    console.log(truthy);
     return (
       <Layout>
+          <FocusShadow
+          isImageEnlarged={truthy}
+          onClick={() => this.resetScale()}
+          />
           <HeroShell>
             <HeroImg page={location.pathname}/>
             <HeroText>This is where you judge me.</HeroText>
           </HeroShell>
-          <div style={{
+          <div
+          style={{
             flex: '1',
             display: "flex",
             flexDirection: 'column',
@@ -50,6 +72,7 @@ class Work extends Component {
             height: "auto",
             alignItems: "center",
             paddingBottom: "60px",
+            backgroundColor: `${props => props.truthy} ? grey : white`,
           }}
           >
             <h1
@@ -84,9 +107,9 @@ class Work extends Component {
             </Link>
           </div>
       </Layout>
-        )
-      }
-    }
+    )
+  }
+}
 
 export const query = graphql`
   query {
