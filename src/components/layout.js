@@ -5,6 +5,12 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'hasklig';
+    src: url('../static/Hasklig-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+  }
    html {
      overflow-x: hidden;
    }
@@ -19,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     font-size: 19px;
     color: ${props => props.theme.lightblack};
-    font-weight: 300;
     font-family: "Raleway", "serif";
     font-weight: 100;
     font-style: normal;
@@ -27,6 +32,18 @@ const GlobalStyle = createGlobalStyle`
   ::selection {
     color: white;
     background-color: #D7337C;
+  }
+  code[class*="language-"],
+  pre[class*="language-"],
+  code > *,
+  code > * > *,
+  code > * > * > * {
+    line-height: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-family: 'hasklig', 'consolas';
+    font-weight: inherit;
+    font-style: inherit;
   }
 `
 

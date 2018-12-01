@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus odio purus
 ```js
   const greeting = "Hello world!"
   const name = "Matthew October"
-  console.log(`${greeting}` My name is ${name});
+  console.log(`${greeting}` My name is ${name})
 ```
 
 Nam nibh nisl, placerat laoreet nulla et, varius sodales odio. Vivamus faucibus, ante ut eleifend iaculis, elit lectus gravida lacus, vitae tristique magna magna non justo. Pellentesque eu augue facilisis, euismod eros non, consectetur est. Suspendisse euismod mauris in feugiat volutpat. Nullam risus leo, semper tempus tincidunt nec, aliquam non justo. Aliquam sodales ipsum eu urna tincidunt, pharetra scelerisque purus congue. Cras pharetra, dolor id porta blandit, augue tortor hendrerit neque, dictum porttitor leo massa ac nulla. Nam at risus nunc. Praesent at viverra sapien. Suspendisse tempor massa sed molestie tincidunt. Nullam ultricies, orci sed finibus maximus, neque ipsum faucibus est, at accumsan lectus nunc nec lectus. Mauris id augue sit amet mi rhoncus posuere ut a nunc.
