@@ -3,7 +3,7 @@ import MenuItems from "./menuItems"
 import styled from "styled-components"
 
 const Container = styled.div`
-  position: absolute; 
+  position: absolute;
   transition: width 500ms ease;
   z-index: 5;
   display: flex;
@@ -13,9 +13,9 @@ const Container = styled.div`
   box-sizing: border-box;
 `
 
-const Menu = () => (
+const Menu = ({ page }) => (
   <Container>
-    <MenuItems />
+    <MenuItems page={page} />
   </Container>
 )
 

@@ -77,8 +77,11 @@ const List = styled.ul`
     align-items: center;
     transition: color 500ms ease, background-color 500ms ease;
     font-family: 'Helvetica';
-    @media (max-width: 700px) {
-      display: none;
+    @media (max-width: 750px) {
+      position: absolute;
+      bottom: -40vh;
+      left: -83vw;
+      display: ${props => props.page === '/' ? "none" : null};
     }
   }
   .link .logo:hover {
@@ -88,8 +91,8 @@ const List = styled.ul`
   }
 `
 
-const MenuItems = () => (
-  <List>
+const MenuItems = (props) => (
+  <List page={props.page}>
     <Link
     className="link"
     activeClassName="active"

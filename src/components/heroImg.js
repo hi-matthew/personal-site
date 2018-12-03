@@ -13,6 +13,7 @@ const HeroContainer = styled.div`
     width: 100vw;
     height: ${props => props.page === '/' ? "100vh" : "50vh"};
   }
+  
 `
 
 const Url = styled.span`
@@ -60,7 +61,7 @@ const HeroImg = ({ page }) => (
     `}
     render={data =>
       <HeroContainer page={page} style={{ zindex: "-1", overflow: "hidden" }}>
-        <Menu/>
+        <Menu page={page}/>
         <Img
         fluid={
         page === '/'
