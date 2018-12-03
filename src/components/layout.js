@@ -33,6 +33,10 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     background-color: #D7337C;
   }
+  .gatsby-highlight {
+    position: relative;
+    width: 100%;
+  }
   code[class*="language-"],
   pre[class*="language-"],
   code > *,

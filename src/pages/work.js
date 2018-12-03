@@ -67,7 +67,7 @@ class Work extends Component {
       <Layout>
           <FocusShadow
           isImageEnlarged={truthy}
-          onClick={() => this.resetScale()}
+          onClick={this.resetScale}
           />
           <HeroShell>
             <HeroImg page={location.pathname}/>
@@ -131,7 +131,7 @@ class Work extends Component {
             </div>
               <Link
                 to={"/prose"}
-                style={{ textDecoration: "none", width: "25%" }}
+                style={{ textDecoration: "none" }}
               >
                 <Button text='Writing'/>
               </Link>

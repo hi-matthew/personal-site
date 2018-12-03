@@ -72,7 +72,9 @@ const Prose = (props) => {
           Thoughts <br/><span style={{ fontSize: "1.25rem", fontFamily:"inherit", fontWeight: "400", color: "#343434"}}>by Matthew October</span>
         </h1>
         {data.allMarkdownRemark.edges.map(({node}) => (
-          <PostListing>
+          <PostListing
+          key={node.id}
+          >
             <Link
             className="postListing"
             to={`${node.fields.slug}`}
