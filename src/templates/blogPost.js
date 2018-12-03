@@ -88,12 +88,15 @@ const Header = styled.div`
 export default class blogPost extends Component {
   state={
     activeMenu: false,
-    showComposedDate: window.innerWidth > 950 ? true : false,
+    showComposedDate: '',
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleWheel);
     window.addEventListener('resize', this.handleResize);
+    window.innerWidth > 950
+    ? this.setState({ showComposedDate: true })
+    : this.setState({ showComposedDate: false })
   }
 
   componentWillUnmount() {
