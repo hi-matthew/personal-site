@@ -14,6 +14,7 @@ const TextContainer = styled.div`
   overflow: hidden;
   align-items: center;
   padding-bottom: 60px;
+  position: relative;
   .alternate-date {
     font-size: 15px;
     font-weight: 800;
@@ -21,6 +22,12 @@ const TextContainer = styled.div`
     text-align: right;
     width: 80%;
     margin: 15px 0 -15px;
+  }
+  @media (max-width: 750px) {
+    background-color: white;
+    z-index: 4;
+    margin-top: 0;
+    padding-top: 50px;
   }
 `
 
@@ -58,6 +65,11 @@ const Header = styled.div`
     ? `1px 0px 5px ${props.theme.lightblack}`
     : null
     };
+  @media (max-width: 750px) {
+    top: 0%;
+    position: absolute;
+    left: 0;
+  }
   .link {
     text-decoration: none;
     color: ${props => props.theme.darkblack};
@@ -134,16 +146,16 @@ export default class blogPost extends Component {
           <HeroImg page={location.pathname}/>
           <HeroText>{post.frontmatter.title}</HeroText>
         </HeroShell>
-        <Header active={activeMenu}>
-          <Link
-          to={'/prose'}
-          className="link"
-          >
-            Back to listings
-          </Link>
-          {composedDate}
-        </Header>
         <TextContainer>
+          <Header active={activeMenu}>
+            <Link
+            to={'/prose'}
+            className="link"
+            >
+              Back to listings
+            </Link>
+            {composedDate}
+          </Header>
           <Text dangerouslySetInnerHTML={{ __html: post.html }} />
           {!showComposedDate
           ? <span className='alternate-date'>

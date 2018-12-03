@@ -9,6 +9,10 @@ const HeroContainer = styled.div`
   height: 100vh;
   width: ${props => props.page === '/' ? "100vw" : "50vw"};
   position: fixed;
+  @media (max-width: 750px) {
+    width: 100vw;
+    height: 50vh
+  }
 `
 
 const Url = styled.span`
@@ -24,7 +28,7 @@ const Url = styled.span`
   position: absolute;
   right: 20px;
   bottom: 170px;
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `

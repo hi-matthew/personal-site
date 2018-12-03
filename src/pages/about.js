@@ -38,6 +38,10 @@ const Intro = styled.section`
   position: relative;
   height: auto;
   padding-bottom: 60px;
+  @media (max-width: 750px) {
+    z-index: 3;
+    background-color: white;
+  }
 `
 
 const Greeter = styled.div`
@@ -48,12 +52,20 @@ const Greeter = styled.div`
   margin-top: 65px;
   position: relative;
   width: 100%;
+  @media (max-width: 750px) {
+    max-width: 85%;
+    width: 100%;
+  }
 `
 
 const Details = styled(Greeter)`
   margin-top: 45px;
   position: relative;
   width: 100%;
+  @media (max-width: 750px) {
+    max-width: 85%;
+    width: 100%;
+  }
 `
 
 const LogoBin = styled.div`

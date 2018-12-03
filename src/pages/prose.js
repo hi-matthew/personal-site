@@ -44,6 +44,22 @@ const PostListing = styled.div`
     transition: color 400ms ease;
   }
 `
+const Main = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto 0;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 45px;
+  @media (max-width: 750px) {
+    z-index: 3;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 25px;
+  }
+`
+
 
 const Prose = (props) => {
   const { location, data } = props;
@@ -53,16 +69,7 @@ const Prose = (props) => {
         <HeroImg page={location.pathname}/>
         <HeroText>This is where I ruminate out loud</HeroText>
       </HeroShell>
-      <div style={{
-        flex: '1',
-        display: "flex",
-        flexDirection: 'column',
-        margin: '50px auto 0',
-        width: "100%",
-        alignItems: "center",
-        paddingBottom: "45px",
-      }}
-      >
+      <Main>
         <h1 style={{
           textAlign: "center",
           marginBottom: "45px",
@@ -85,7 +92,7 @@ const Prose = (props) => {
             </Link>
           </PostListing>
         ))}
-      </div>
+      </Main>
     </Layout>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
@@ -51,6 +51,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const Container = styled.div`
+  max-width: 100vw;
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+`
+
 const theme = {
   teal: "#8BB4AF",
   darkblack: "#343434",
@@ -85,16 +95,9 @@ const Layout = ({ children }) => (
             <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" />
           </Helmet>
           <GlobalStyle />
-          <div
-          style={{
-            maxWidth: "100vw",
-            margin: '0 0',
-            padding: '0 0',
-            display: 'flex',
-          }}
-          >
+          <Container>
             {children}
-          </div>
+          </Container>
         </>
       </ThemeProvider>
     )}

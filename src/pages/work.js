@@ -17,6 +17,22 @@ const FocusShadow = styled.div`
   z-index: 4;
 `
 
+const Main = styled.div`
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding-bottom: 60px;
+  background-color: ${props => props.truthy ? "grey" : "white"};
+  @media (max-width: 750px) {
+    z-index: 3;
+  }
+`
+
 const Greeter = styled.div`
   position: relative;
   background-color: #ffffff;
@@ -73,20 +89,7 @@ class Work extends Component {
             <HeroImg page={location.pathname}/>
             <HeroText>This is where you judge me</HeroText>
           </HeroShell>
-          <div
-          style={{
-            position: "relative",
-            flex: '1',
-            display: "flex",
-            flexDirection: 'column',
-            alignItems: "center",
-            margin: '0 auto',
-            width: "100%",
-            height: "auto",
-            paddingBottom: "60px",
-            backgroundColor: `${props => props.truthy} ? grey : white`,
-          }}
-          >
+          <Main>
             <Greeter>
               <h1
               style={{
@@ -135,7 +138,7 @@ class Work extends Component {
               >
                 <Button text='Writing'/>
               </Link>
-          </div>
+          </Main>
       </Layout>
     )
   }
