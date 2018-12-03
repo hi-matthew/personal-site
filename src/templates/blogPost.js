@@ -14,6 +14,14 @@ const TextContainer = styled.div`
   overflow: hidden;
   align-items: center;
   padding-bottom: 60px;
+  .alternate-date {
+    font-size: 15px;
+    font-weight: 800;
+    font-family: Helvetica;
+    text-align: right;
+    width: 80%;
+    margin: 15px 0 -15px;
+  }
 `
 
 const Text = styled.div`
@@ -36,12 +44,14 @@ const Header = styled.div`
   left: 50vw;
   overflow: hidden;
   right: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px 0;
   box-sizing: border-box;
   font-weight: 800;
+  font-size: 15px;
   opacity: 0.9;
   transition: box-shadow 300ms ease;
   box-shadow: ${props => props.active
@@ -78,14 +88,17 @@ const Header = styled.div`
 export default class blogPost extends Component {
   state={
     activeMenu: false,
+    showComposedDate: window.innerWidth > 950 ? true : false,
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleWheel);
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleWheel);
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleWheel = () => {
@@ -95,9 +108,22 @@ export default class blogPost extends Component {
     : this.setState({ activeMenu: false })
   }
 
+  handleResize = () => {
+    return window.innerWidth > 950
+    ? this.setState({ showComposedDate: true })
+    : this.setState({ showComposedDate: false });
+  }
+
   render() {
     const { data, location } = this.props;
     const post = data.markdownRemark;
+    const {activeMenu, showComposedDate} = this.state;
+    const composedDate = showComposedDate
+      ? `Composed: ${post.frontmatter.date}`
+      : null;
+    const bottomComposedDate = !showComposedDate
+      ? `Composed: ${post.frontmatter.date}`
+      : null;
 
     return (
       <Layout>
@@ -105,17 +131,23 @@ export default class blogPost extends Component {
           <HeroImg page={location.pathname}/>
           <HeroText>{post.frontmatter.title}</HeroText>
         </HeroShell>
-        <Header active={this.state.activeMenu}>
+        <Header active={activeMenu}>
           <Link
           to={'/prose'}
           className="link"
           >
             Back to listings
           </Link>
-          Composed: {post.frontmatter.date}
+          {composedDate}
         </Header>
         <TextContainer>
           <Text dangerouslySetInnerHTML={{ __html: post.html }} />
+          {!showComposedDate
+          ? <span className='alternate-date'>
+              {bottomComposedDate}
+            </span>
+          : null
+          }
         </TextContainer>
       </Layout>
     )
