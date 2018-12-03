@@ -11,7 +11,7 @@ const HeroContainer = styled.div`
   position: fixed;
   @media (max-width: 750px) {
     width: 100vw;
-    height: 50vh
+    height: ${props => props.page === '/' ? "100vh" : "50vh"};
   }
 `
 
