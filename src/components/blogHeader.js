@@ -26,7 +26,7 @@ const Header = styled.div`
     : null
     };
   @media (max-width: 750px) {
-    top: 0%;
+    top: 0;
     position: absolute;
     left: 0;
   }

@@ -49,6 +49,7 @@ export default class blogPost extends Component {
   state={
     activeMenu: false,
     showComposedDate: '',
+    windowIsMobileSized: '',
   }
 
   componentDidMount() {
@@ -57,6 +58,10 @@ export default class blogPost extends Component {
     window.innerWidth > 950
     ? this.setState({ showComposedDate: true })
     : this.setState({ showComposedDate: false })
+
+    window.innerWidth < 751
+    ? this.setState({ windowIsMobileSized: true })
+    : this.setState({ windowIsMobileSized: false })
   }
 
   componentWillUnmount() {
@@ -72,15 +77,19 @@ export default class blogPost extends Component {
   }
 
   handleResize = () => {
-    return window.innerWidth > 950
+    window.innerWidth > 950
     ? this.setState({ showComposedDate: true })
-    : this.setState({ showComposedDate: false });
+    : this.setState({ showComposedDate: false })
+
+    window.innerWidth < 751
+    ? this.setState({ windowIsMobileSized: true })
+    : this.setState({ windowIsMobileSized: false })
   }
 
   render() {
     const { data, location } = this.props;
     const post = data.markdownRemark;
-    const {activeMenu, showComposedDate} = this.state;
+    const {activeMenu, showComposedDate, windowIsMobileSized} = this.state;
     const composedDate = showComposedDate
       ? `Composed: ${post.frontmatter.date}`
       : null;
@@ -93,13 +102,13 @@ export default class blogPost extends Component {
         <HeroShell>
           <HeroImg page={location.pathname}/>
           <HeroText>{post.frontmatter.title}</HeroText>
-          {window.innerWidth > 750
+          {!windowIsMobileSized
           ? <BlogHeader activeMenu={activeMenu} composedDate={composedDate} />
           : null
           }
         </HeroShell>
         <TextContainer>
-          {window.innerWidth < 751
+          {windowIsMobileSized
           ? <BlogHeader activeMenu={activeMenu} composedDate={composedDate} />
           : null
           }
