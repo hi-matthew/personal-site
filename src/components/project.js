@@ -43,7 +43,7 @@ const Frame = styled.div`
 
 const TechLogos = styled.ul`
   display: flex;
-  width: 50%;
+  width: auto;
   justify-content: center;
   list-style: none;
   padding: 0 0;

@@ -56,6 +56,18 @@ const Details = styled(Greeter)`
   width: 100%;
 `
 
+const LogoBin = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  width: 100%;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  & .logo {
+    margin: 15px 25px;
+  }
+`
+
 const H2 = styled.h2`
   color: ${props => props.theme.darkblack};
   font-size: ${props => props.big ? "40px" : "28px"};
@@ -113,20 +125,15 @@ const About = (props) => {
           <p>
             Somewhere I can continue mastering technologies specific or similar to:
           </p>
-          <div style={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "100%",
-          marginBottom: "1.45rem"
-          }}>
-            <Img fixed={data.js.childImageSharp.fixed} title="JavaScript"/>
-            <Img fixed={data.react.childImageSharp.fixed} title="React"/>
-            <Img fixed={data.redux.childImageSharp.fixed} title="Redux"/>
-            <Img fixed={data.node.childImageSharp.fixed} title="Node"/>
-            <Img fixed={data.graphQL.childImageSharp.fixed} title="GraphQL"/>
-            <Img fixed={data.gatsbyIcon.childImageSharp.fixed} title="Gatsby"/>
-            <Img fixed={data.styled.childImageSharp.fixed} title="Styled Components"/>
-          </div>
+          <LogoBin>
+            <Img className="logo" fixed={data.js.childImageSharp.fixed} title="JavaScript"/>
+            <Img className="logo" fixed={data.react.childImageSharp.fixed} title="React"/>
+            <Img className="logo" fixed={data.redux.childImageSharp.fixed} title="Redux"/>
+            <Img className="logo" fixed={data.node.childImageSharp.fixed} title="Node"/>
+            <Img className="logo" fixed={data.graphQL.childImageSharp.fixed} title="GraphQL"/>
+            <Img className="logo" fixed={data.gatsbyIcon.childImageSharp.fixed} title="Gatsby"/>
+            <Img className="logo" fixed={data.styled.childImageSharp.fixed} title="Styled Components"/>
+          </LogoBin>
           <p>Somewhere I'm able to learn from my peers.</p>
           <p>Somewhere I'm challenged and held accountable.</p>
           <p>Somewhere that takes pride in their work.</p>
