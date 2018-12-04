@@ -13,7 +13,6 @@ const HeroContainer = styled.div`
     width: 100vw;
     height: ${props => props.page === '/' ? "100vh" : "50vh"};
   }
-  
 `
 
 const Url = styled.span`

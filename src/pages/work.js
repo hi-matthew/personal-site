@@ -173,6 +173,9 @@ export const query = graphql`
     styled: file(relativePath: {eq: "logos/styled.png"}) {
       ...techStack
     }
+    webpack: file(relativePath: {eq: "logos/webpack.png"}) {
+      ...techStack
+    }
     gatsbyIcon: file(relativePath: {eq: "logos/gatsby-icon.png"}) {
       ...techStack
     }

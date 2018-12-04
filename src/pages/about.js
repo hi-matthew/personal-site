@@ -106,7 +106,7 @@ const About = (props) => {
       <HeroShell>
         <HeroImg page={location.pathname}/>
         <HeroText>
-          This is where I tell you my last name is not actually October
+          This is where I tell you my last name is not October
         </HeroText>
       </HeroShell>
       <Intro>
@@ -144,7 +144,7 @@ const About = (props) => {
             <Img className="logo" fixed={data.node.childImageSharp.fixed} title="Node"/>
             <Img className="logo" fixed={data.graphQL.childImageSharp.fixed} title="GraphQL"/>
             <Img className="logo" fixed={data.gatsbyIcon.childImageSharp.fixed} title="Gatsby"/>
-            <Img className="logo" fixed={data.styled.childImageSharp.fixed} title="Styled Components"/>
+            <Img className="logo" fixed={data.webpack.childImageSharp.fixed} title="Webpack"/>
           </LogoBin>
           <p>Somewhere I'm able to learn from my peers.</p>
           <p>Somewhere I'm challenged and held accountable.</p>
@@ -188,7 +188,7 @@ export const query = graphql`
     node: file(relativePath: {eq: "logos/node.png"}) {
       ...techStack
     }
-    styled: file(relativePath: {eq: "logos/styled.png"}) {
+    webpack: file(relativePath: {eq: "logos/webpack.png"}) {
       ...techStack
     }
     gatsbyIcon: file(relativePath: {eq: "logos/gatsby-icon.png"}) {
