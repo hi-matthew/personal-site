@@ -15,6 +15,9 @@ const FocusShadow = styled.div`
   transition: background-color 500ms ease, height 500ms ease;
   background-color: ${props => props.isImageEnlarged ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
   z-index: 4;
+  @media (max-width: 750px) {
+    background-color: transparent;
+  }
 `
 
 const Main = styled.div`

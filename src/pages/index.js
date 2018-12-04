@@ -16,13 +16,24 @@ const FadeIn = keyframes`
   }
 `
 
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+`
+
 const HeroText = styled.h1`
   color: white;
   font-size: 4.5rem;
-  /* padding-left: 2rem; */
   opacity: 0;
   transition: transform 300ms ease, opacity 300ms ease;
   animation: ${FadeIn} 1.2s ease forwards;
+  @media (max-width: 500px) {
+      font-size: 3.5rem;
+    }
   div {
     color: ${props => props.theme.darkblack};
     font-size: 5rem;
@@ -33,6 +44,9 @@ const HeroText = styled.h1`
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    @media (max-width: 500px) {
+      font-size: 4rem;
+    }
   }
   .oct {
     height: 0px;
@@ -43,29 +57,21 @@ const HeroText = styled.h1`
     transform: translateX(100%);
     font-family: Helvetica;
     font-weight: 700;
+    @media (max-width: 500px) {
+      font-size: 4rem;
+    }
   }
   div:hover .oct {
     height: 100px;
     opacity: 1;
     transform: translateX(0);
   }
-  @media (max-width: 500px) {
-    font-size: 4rem;
-  }
 `
 
 const IndexPage = (props) => (
   <Layout>
     <HeroImg page={props.location.pathname}/>
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-      height: "100vh",
-    }}
-    >
+    <TextContainer>
       <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October</span></div></HeroText>
       <Link
         to={"/about"}
@@ -73,7 +79,7 @@ const IndexPage = (props) => (
       >
         <Button text='About me' />
       </Link>
-    </div>
+    </TextContainer>
   </Layout>
 )
 

@@ -24,6 +24,9 @@ const Frame = styled.div`
       ? `10px 10px 30px ${props.theme.darkblack}`
       : `5px 5px 10px ${props.theme.darkblack}`
     };
+    @media (max-width: 750px) {
+      transform: ${props => props.scale ? "scale(1.3)" : null};
+    }
   }
   & h2::before {
     content: "(Click image to enlarge)";
