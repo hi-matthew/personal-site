@@ -26,7 +26,7 @@ const myProjects = [
   {
     index: "3",
     title: "Trello",
-    desc: "This is a project I'd almost like to rebuild inside React to better handle state. I originally thought to create a Trello app to cement DOM manipulation principles--which served to be effective--but an app like this, ultimately, requires more sophisticated technology than plan HTML, CSS and JS. You may find a bug or two depending on how much effort you place forth--launch early and iterate, right?",
+    desc: "This is a project I'd almost like to rebuild inside React to better handle state. I originally thought to create a Trello app to cement DOM manipulation principles--which served to be effective--but an app like this, ultimately, requires more sophisticated technology than just plain HTML, CSS and JS. You may find a bug or two depending on how much effort you place forth--launch early and iterate, right?",
     techStack: ['js', 'css', 'html'],
     demoUrl: "https://matthewoctober.github.io/trello-clone/",
     github: "https://github.com/matthewoctober/trello-clone",
@@ -34,7 +34,7 @@ const myProjects = [
   {
     index: "4",
     title: "iOS Calculator",
-    desc: "This still serves as one of my favorite projects I've participated in crafting. All of the logic behind this iOS calculator was composed in vanilla JS. I did, however, leverage the MathJS library for floating point errors because screw that. This project was also my introduction to webpack, so the webpack configuration within this project is beyond primitive. The weather app webpack configuration file is more robust, if you're curious.",
+    desc: "This still serves as one of my favorite projects I've participated in crafting. All of the logic behind this iOS calculator was composed in vanilla JS. I did, however, leverage the MathJS library for floating point errors because screw that. This project was also my introduction to webpack, so the webpack configuration file within this project is quite primitive. The weather app webpack configuration file is more robust, if you're curious.",
     techStack: ['webpack', 'js', 'css', 'html'],
     demoUrl: "https://matthewoctober.github.io/ios-calculator/",
     github: "https://github.com/matthewoctober/ios-calculator",
