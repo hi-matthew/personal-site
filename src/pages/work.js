@@ -133,7 +133,7 @@ class Work extends Component {
               textAlign: "center",
             }}>
               <h2>I like words too.</h2>
-              <p>I need to write more, but you'll be able to find a couple posts for now.</p>
+              <p>I need to write more, but you'll be able to find at least one post for now.</p>
             </div>
               <Link
                 to={"/prose"}
