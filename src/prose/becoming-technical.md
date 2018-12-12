@@ -68,7 +68,7 @@ You can’t help but to feel a little better about yourself when Kyle Simpson—
 
 Former professional cyclist, Greg LeMond, captured this same notion in a rather terse fashion:
 
-> “It never gets easier you just go faster.”<br><br>
+> “It never gets easier, you just go faster.”<br><br>
 > _-Greg LeMond_
 
 So, whether you’re six months, one year, or five years into your technical trek, if certain things still don’t make sense to you, don’t feel bad.
