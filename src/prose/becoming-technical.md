@@ -5,8 +5,6 @@ date: 'December 11, 2018'
 author: 'Matthew October'
 ---
 
-# Becoming technical
-
 > “I wish I knew how to code.”
 
 If you’ve ever thought this to yourself, this post is for you—but not only you.
@@ -51,8 +49,8 @@ If you want some search-engine-fast proof as to how attainable becoming technica
 
 These types of stories are powerful. It’s astonishing how much impact one or two anecdotes can have on a person. I can recall two particular narratives that took me from “I wish I knew how to code” to coding everyday:
 
-- [The learn enough story](https://www.learnenough.com/story): This piece of content alone is what inspired much of my own technical pursuit. This single page took me from subconscious uncertainty to a fresh new “you can do this” set of eyes. In short, this is the post that dangled the carrot in front of my face.
-- [How I transitioned from a graphic designer to front-end developer in 5 months](https://medium.freecodecamp.org/graphic-designer-to-front-end-developer-7be7bfd6a46c): If _The learn enough story_ is what strung the carrot in front of my face, this is the anecdote that provided me my initial push forward. The author walks you through his background, his reasons as to why he wanted to learn to code, his self-contrived work processes, in addition to sharing numerous resources he found valuable within his own journey. Oh, and spoiler alert, he got the job.
+- <a href="https://www.learnenough.com/story" class='anecdote'>The learn enough story</a>: This piece of content alone is what inspired much of my own technical pursuit. This single page took me from subconscious uncertainty to a fresh new “you can do this” set of eyes. In short, this is the post that dangled the carrot in front of my face.
+- <a href="https://medium.freecodecamp.org/graphic-designer-to-front-end-developer-7be7bfd6a46c" class='anecdote'>How I transitioned from a graphic designer to front-end developer in 5 months</a>: If _The learn enough story_ is what strung the carrot in front of my face, this is the anecdote that provided me with that initial push forward--my accelerator. The author walks you through his background, his reasons as to why he wanted to learn to code, his self-contrived work processes, in addition to sharing numerous resources he found valuable within his own journey. Oh, and spoiler alert, he got the job.
 
 It’s important to become inspired when pursuing something new. Aspirations are fickle and easily wither if you don’t feed them. So, avoid starving your yearnings.
 
@@ -70,7 +68,7 @@ You can’t help but to feel a little better about yourself when Kyle Simpson—
 
 Former professional cyclist, Greg LeMond, captured this same notion in a rather terse fashion:
 
-> “It never gets easier you just go faster.”
+> “It never gets easier you just go faster.”<br><br>
 > _-Greg LeMond_
 
 So, whether you’re six months, one year, or five years into your technical trek, if certain things still don’t make sense to you, don’t feel bad.

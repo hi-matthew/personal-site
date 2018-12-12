@@ -49,6 +49,24 @@ const GlobalStyle = createGlobalStyle`
     font-weight: inherit;
     font-style: inherit;
   }
+  blockquote {
+    border-left: 5px solid ${props => props.theme.teal};
+    margin-left: 0;
+    padding-left: 1em;
+  }
+  ul {
+    font-family: "Raleway", "serif";
+    font-size: 19px;
+    line-height: 1.5;
+    li ~ li {
+      margin-top: 10px;
+    }
+  }
+  .anecdote, .anecdote:visited {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 5px solid ${props => props.theme.teal};
+  }
 `
 
 const Container = styled.div`
