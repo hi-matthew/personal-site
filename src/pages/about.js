@@ -49,13 +49,19 @@ const Greeter = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 75%;
-  margin-top: 65px;
+  margin-top: 50px;
   position: relative;
   width: 100%;
   @media (max-width: 750px) {
     max-width: 85%;
     width: 100%;
   }
+`
+
+const ImgBin = styled.div`
+  position: relative;
+  width: 90%;
+  height: 40vh;
 `
 
 const Details = styled(Greeter)`
@@ -111,13 +117,20 @@ const About = (props) => {
       </HeroShell>
       <Intro>
         <Greeter>
-          <Img
-          fixed={data.matthew.childImageSharp.fixed}
-          style={{
-            borderRadius: "100px",
-            marginBottom: "15px",
-          }}
-          />
+          <ImgBin>
+            <Img
+            fluid={data.headshot.childImageSharp.fluid}
+            style={{
+              borderRadius: "3px",
+              marginBottom: "15px",
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              position: "absolute",
+            }}
+            />
+          </ImgBin>
           <H2 big>It's nice to meet you</H2>
           <p>
             So, my last name is not October. October is only my birth month. Though, I use Matthew October as a moniker in order to gain more continuity across accounts. Also, I'd be lying if I were to say the dot com TLD didn't have some influence on me. I know, it's weird, but it's what you do when both your first and last name are generic and you share the internet with billions of people.
@@ -169,10 +182,10 @@ const About = (props) => {
 
 export const query = graphql`
   query {
-    matthew: file(relativePath: {eq: "headshot/matthew.jpg" }) {
+    headshot: file(relativePath: {eq: "headshot/headshot.jpg" }) {
       childImageSharp {
-        fixed(width: 200, height: 200) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 1600) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
