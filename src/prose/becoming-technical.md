@@ -3,6 +3,7 @@ path: '/prose/becoming-technical'
 title: 'Becoming technical'
 date: 'December 11, 2018'
 author: 'Matthew October'
+image: '../images/backgrounds/prose.jpg'
 ---
 
 > “I wish I knew how to code.”

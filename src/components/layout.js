@@ -3,6 +3,7 @@ import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import matthewoctober from "../images/apps/matthewoctober.png"
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -94,6 +95,8 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            siteUrl
+            description
           }
         }
       }
@@ -104,13 +107,17 @@ const Layout = ({ children }) => (
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
-              { name: 'description', content: 'This is the official website of Matthew October.' },
-              { name: 'keywords', content: 'Matthew October, portfolio, personal site' },
+              { name: 'description', content: data.site.siteMetadata.description },
+              { name: 'keywords', content: 'Matthew October, Matthewoctober, portfolio, personal site' },
             ]}
           >
             <html lang="en" />
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
             <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" />
+            <meta property="og:url" content={data.site.siteMetadata.siteUrl} />
+            <meta property="og:type" content="website" />
+            <meta property="og:locale" content="en" />
+            <meta property="og:site_name" content={data.site.siteMetadata.title} />
+            <meta property="og:image" content={`${data.site.siteMetadata.siteUrl}${matthewoctober}`} />
           </Helmet>
           <GlobalStyle />
           <Container>

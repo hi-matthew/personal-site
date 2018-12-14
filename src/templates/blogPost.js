@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import Helmet from 'react-helmet'
 import HeroImg from "../components/heroImg"
 import BlogHeader from "../components/blogHeader"
 import HeroShell, { HeroText } from "../components/heroStyles"
 import Layout from "../components/layout"
+import prose from "../images/backgrounds/prose.jpg"
 
 const TextContainer = styled.div`
   flex: 1;
@@ -99,6 +101,9 @@ export default class blogPost extends Component {
 
     return (
       <Layout>
+        <Helmet>
+          <meta property="og:image" content={`${data.site.siteMetadata.siteUrl}${prose}`} />
+        </Helmet>
         <HeroShell>
           <HeroImg page={location.pathname}/>
           <HeroText>{post.frontmatter.title}</HeroText>
@@ -132,6 +137,11 @@ export const query = graphql`
       frontmatter {
         title
         date
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

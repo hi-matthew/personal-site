@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Matthew October | Personal Site',
+    title: 'Matthew October',
+    siteUrl: 'https://www.matthewoctober.com/',
+    description: 'The official website of Matthew October.'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
