@@ -82,9 +82,10 @@ const Prose = (props) => {
           <PostListing
           key={node.id}
           >
+            {console.log(node)}
             <Link
             className="postListing"
-            to={`${node.fields.slug}`}
+            to={`${node.fields.slug.substring(0, node.fields.slug.length - 1)}`}
             >
               <h2>{node.frontmatter.title}</h2>
               <h4>{node.frontmatter.date}</h4>
