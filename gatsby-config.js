@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Matthew October',
-    siteUrl: 'https://www.matthewoctober.com/',
+    siteUrl: 'https://www.matthewoctober.com',
     description: 'The official website of Matthew October.'
   },
   plugins: [
