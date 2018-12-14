@@ -108,7 +108,7 @@ const H2 = styled.h2`
 const About = (props) => {
   const { data, location } = props;
   return (
-    <Layout>
+    <Layout path={location.pathname}>
       <HeroShell>
         <HeroImg page={location.pathname}/>
         <HeroText>

@@ -88,7 +88,7 @@ const theme = {
   linkhover: "#fdfdfd",
 };
 
-const Layout = ({ children }) => (
+const Layout = ({ children, path }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -113,7 +113,7 @@ const Layout = ({ children }) => (
           >
             <html lang="en" />
             <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" />
-            <meta property="og:url" content={data.site.siteMetadata.siteUrl} />
+            <meta property="og:url" content={`${data.site.siteMetadata.siteUrl}${path}`} />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="en" />
             <meta property="og:site_name" content={data.site.siteMetadata.title} />

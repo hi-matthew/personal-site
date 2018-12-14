@@ -69,7 +69,7 @@ const HeroText = styled.h1`
 `
 
 const IndexPage = (props) => (
-  <Layout>
+  <Layout path={props.location.pathname}>
     <HeroImg page={props.location.pathname}/>
     <TextContainer>
       <HeroText>Hi, my <br /> name is <div>Matthew <span className="oct">October</span></div></HeroText>

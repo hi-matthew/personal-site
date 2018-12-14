@@ -83,7 +83,7 @@ class Work extends Component {
     }
     console.log(truthy);
     return (
-      <Layout>
+      <Layout path={location.pathname}>
           <FocusShadow
           isImageEnlarged={truthy}
           onClick={this.resetScale}

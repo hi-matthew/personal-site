@@ -64,7 +64,7 @@ const Main = styled.div`
 const Prose = (props) => {
   const { location, data } = props;
   return (
-    <Layout>
+    <Layout path={location.pathname}>
       <HeroShell>
         <HeroImg page={location.pathname}/>
         <HeroText>This is where I ruminate out loud</HeroText>
