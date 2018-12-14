@@ -25,6 +25,7 @@ module.exports = {
     `gatsby-plugin-twitter`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-favicon`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -49,6 +50,21 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Matthew October`,
+        short_name: `Matthew October`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#8BB4AF`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-130648548-1",
@@ -67,18 +83,6 @@ module.exports = {
         siteSpeedSampleRate: 10,
         cookieDomain: "matthewoctober.com",
       }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/logos/gatsby-icon.png', // This path is relative to the root of the site.
-      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
