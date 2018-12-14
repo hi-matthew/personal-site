@@ -100,7 +100,7 @@ export default class blogPost extends Component {
       : null;
 
     return (
-      <Layout>
+      <Layout path={location.pathname}>
         <Helmet>
           <meta property="og:image" content={`${data.site.siteMetadata.siteUrl}${prose}`} />
         </Helmet>
