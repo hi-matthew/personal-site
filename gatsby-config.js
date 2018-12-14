@@ -23,6 +23,8 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     `gatsby-plugin-twitter`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
