@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import HeroImg from '../components/heroImg'
 import Button from "../components/button"
 import HeroShell, { HeroText } from "../components/heroStyles"
+import Resume from "../static/Resume.pdf"
 
 const SwipeRight = keyframes`
   0% {
@@ -105,6 +106,15 @@ const H2 = styled.h2`
   }
 `
 
+const ContactIcons = styled.div`
+display: flex;
+width: 70%;
+justify-content: space-around;
+.link {
+  text-decoration: none;
+}
+`
+
 const About = (props) => {
   const { data, location } = props;
   return (
@@ -132,6 +142,26 @@ const About = (props) => {
             />
           </ImgBin>
           <H2 big>It's nice to meet you</H2>
+          <ContactIcons>
+            <a href={'https://www.github.com/matthewoctober'}
+            target={"_blank"}
+            className="link"
+            >
+              <Img fixed={data.github.childImageSharp.fixed} />
+            </a>
+            <a href={'https://www.linkedin.com/in/matthewoctober'}
+            target={"_blank"}
+            className="link"
+            >
+              <Img fixed={data.linkedin.childImageSharp.fixed} />
+            </a>
+            <a href={Resume}
+            target={"_blank"}
+            className="link"
+            >
+              <Img fixed={data.resume.childImageSharp.fixed} />
+            </a>
+          </ContactIcons>
           <p>
             So, my last name is not October. October is only my birth month. Though, I use Matthew October as a moniker in order to gain more continuity across accounts. Also, I'd be lying if I were to say the dot com TLD didn't have some influence on me. I know, it's weird, but it's what you do when both your first and last name are generic and you share the internet with billions of people.
           </p>
@@ -210,6 +240,15 @@ export const query = graphql`
     graphQL: file(relativePath: {eq: "logos/graphQL.png"}) {
       ...techStack
     }
+    github: file(relativePath: {eq: "icons/github.png"}) {
+      ...iconStack
+    }
+    linkedin: file(relativePath: {eq: "icons/linkedin.png"}) {
+      ...iconStack
+    }
+    resume: file(relativePath: {eq: "icons/resume.png"}) {
+      ...iconStack
+    }
   }
 `
 
@@ -217,6 +256,16 @@ export const techStack = graphql`
   fragment techStack on File {
     childImageSharp {
       fixed(width: 50, height: 50) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`
+
+export const iconStack = graphql`
+  fragment iconStack on File {
+    childImageSharp {
+      fixed(width: 25, height: 25) {
         ...GatsbyImageSharpFixed
       }
     }
