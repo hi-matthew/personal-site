@@ -1,8 +1,8 @@
 ---
-path: '/prose/becoming-technical'
-title: 'Becoming technical'
-date: 'December 11, 2018'
-author: 'Matthew October'
+title: "Becoming technical"
+description: "Everyone wants to learn how to code. And, frankly, if you have any interest at all, you should. If you're an aspiring developer looking for insight--eureka!"
+date: "December 11, 2018"
+author: "Matthew October"
 ---
 
 > “I wish I knew how to code.”

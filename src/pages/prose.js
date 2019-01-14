@@ -107,7 +107,6 @@ export const query = graphql`
           id
           frontmatter {
             title
-            path
             date
             author
             _PARENT

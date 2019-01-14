@@ -1,8 +1,8 @@
 ---
-path: '/prose/an-introduction-to-dns-witchcraft'
-title: 'An introduction to DNS witchcraft'
-date: 'January 13, 2018'
-author: 'Matthew October'
+title: "An introduction to DNS witchcraft"
+description: "DNS is what makes the web go round, but how many of us even know what DNS is or how it works. If you like browsers and servers, you're in the right place."
+date: "January 13, 2018"
+author: "Matthew October"
 ---
 
 As modern day web surfers, we’ve all grown to admire our internet browsers.
@@ -40,7 +40,7 @@ Your friend needs help finding a chef knife. There is no signage stating “kniv
 
 As you begin to near aisle seven, you notice that there are actually four aisle sevens: 7.1, 7.2, 7.3 and 7.4. You see the store manager and you ask her which aisle seven shelves chef knives. She tells you 7.3. You go to aisle 7.3, grab the chef knife your friend wants and head back to where your friend is waiting to give him the knife.
 
-That is how DNS works in it’s most rudimentary form: through a series of inquiries.
+That is how DNS works in its most rudimentary form: through a series of inquiries.
 
 To gain a more precise understanding of how DNS takes place in the digital world, we’ll first need to review some of DNS’ anatomical parts.
 

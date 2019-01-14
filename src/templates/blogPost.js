@@ -103,6 +103,10 @@ export default class blogPost extends Component {
       <Layout path={location.pathname}>
         <Helmet>
           <meta property="og:image" content={`${data.site.siteMetadata.siteUrl}${prose}`} />
+          <meta property="og:title" content={data.markdownRemark.frontmatter.title} />
+          <meta property="article:author" content={data.markdownRemark.frontmatter.author} />
+          <meta name="author" content={data.markdownRemark.frontmatter.author} />
+          <meta property="og:description" content={data.markdownRemark.frontmatter.description} />
         </Helmet>
         <HeroShell>
           <HeroImg page={location.pathname}/>
@@ -136,7 +140,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
         date
+        author
       }
     }
     site {
