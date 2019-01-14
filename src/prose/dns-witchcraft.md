@@ -7,11 +7,7 @@ author: 'Matthew October'
 
 As modern day web surfers, we’ve all grown to admire our internet browsers.
 
-Because no matter the request, our browser is always up to the challenge. Looking for a new book to read? Not a problem: open Google Chrome, type in “www.goodreads.com”, press “enter” and presto, you’re on your way.
-
-All possible because of Google Chrome.
-
-Hail, Google Chrome!
+Because no matter the request, our browser is always up to the challenge. Looking for a new book to read? Not a problem: open Google Chrome, type in “www.goodreads.com”, press “enter” and, presto, you’re on your way.
 
 But have you ever wondered what actually happens between the time you hit your “enter” key and the time your browser renders your requested webpage? You know, that whole half second of purgatorial anguish.
 
@@ -72,8 +68,8 @@ Warning: you are about to expose yourself to the inner workings of web surfing. 
 
 After this, there is no turning back. You take the blue pill—the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes. Remember: all I'm offering is the truth.
 
-1. User types in “https://www.amazon.com” and presses “enter.”
-2. Browser checks to see if the IP address for “https://www.amazon.com” is stored in cache. In this scenario, it is not. Browser panics, questions the meaning of life, but presses on and asks the operating system (OS) if it knows.
+1. User types in “www.amazon.com” and presses “enter.”
+2. Browser checks to see if the IP address for “www.amazon.com” is stored in cache. In this scenario, it is not. Browser panics, questions the meaning of life, but presses on and asks the operating system (OS) if it knows.
 3. OS checks its backlogs. In this scenario, OS does not find anything. OS then calls upon the resolver for help.
 4. The resolver checks its cache, but knows nothing, like Jon Snow. Resolver then prepares for its voyage and begins to set sail to the root nameserver.
 5. Resolver asks the root nameserver if it knows the IP address for “www.amazon.com.” The root nameserver responds by saying “Alas, I do not. I do know where you can find more information regarding that .com top level domain, though. However, I have one condition: allow me access to your prime account.“ Resolver agrees to the terms, stores the information in its cache and sets sail once more to the .com TLD nameservers.

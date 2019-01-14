@@ -55,13 +55,17 @@ const GlobalStyle = createGlobalStyle`
     margin-left: 0;
     padding-left: 1em;
   }
-  ul {
+  ul, ol {
     font-family: "Raleway", "serif";
     font-size: 19px;
+    font-weight: 100;
     line-height: 1.5;
     li ~ li {
       margin-top: 10px;
     }
+  }
+  ol {
+    padding-left: 20px;
   }
   .anecdote, .anecdote:visited {
     text-decoration: none;
@@ -112,7 +116,7 @@ const Layout = ({ children, path }) => (
             ]}
           >
             <html lang="en" />
-            <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Raleway:300,500" rel="stylesheet" />
             <meta property="og:url" content={`${data.site.siteMetadata.siteUrl}${path}`} />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="en" />
