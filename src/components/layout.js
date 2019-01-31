@@ -129,7 +129,7 @@ const Layout = ({ children, path }) => (
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'UA-130648548-1');
+                gtag('config', 'UA-130648548-1', {'page_path': '${path}'});
               `}
             </script>
           </Helmet>
