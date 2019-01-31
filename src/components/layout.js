@@ -122,6 +122,16 @@ const Layout = ({ children, path }) => (
             <meta property="og:locale" content="en" />
             <meta property="og:site_name" content={data.site.siteMetadata.title} />
             <meta property="og:image" content={`${data.site.siteMetadata.siteUrl}${matthewoctober}`} />
+            {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+            <script async      src="https://www.googletagmanager.com/gtag/js?id=UA-130648548-1" />
+            <script>
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-130648548-1');
+              `}
+            </script>
           </Helmet>
           <GlobalStyle />
           <Container>
