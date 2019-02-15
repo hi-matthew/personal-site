@@ -2,7 +2,7 @@ const myProjects = [
     {
     index: "0",
     title: "Chatterbox",
-    desc: "Chatterbox is a MERN stack chat application, which utilizes SocketIO to provide users a duplex communication channel. The primary goal of building this application was to solidify my understanding of client/server network architecture. Through building Chatterbox I was able to gain further comprehension and comfortability surroundings REST API's, MongoDB/Mongoose, session storage, user authentication, form validation, password hashing, cors, etc. Create React App was used to provide the front-end for this application. I have worked with Pug's templating engine to render view files in a traditional MVC design pattern, but who wants to write Pug when they could write React?",
+    desc: "Chatterbox is a MERN stack chat application, which utilizes SocketIO to provide users a duplex communication channel. The primary goal of building this application was to solidify my understanding of client/server network architecture. Through building Chatterbox I was able to gain further comprehension and comfortability surroundings REST API's, MongoDB/Mongoose, user session management, user authentication, form validation, password hashing, cors, etc. Create React App was used to provide the front-end for this application. I have worked with Pug's templating engine to render view files in a traditional MVC design pattern, but who wants to write Pug when they could write React?",
     techStack: ['mongo', 'express', 'react', 'node', 'socketio'],
     demoUrl: "https://chatterbox-prod.herokuapp.com/",
     github: "https://github.com/matthewoctober/chatterbox"
