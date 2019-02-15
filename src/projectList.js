@@ -1,20 +1,20 @@
 const myProjects = [
-  {
+    {
     index: "0",
+    title: "Chatterbox",
+    desc: "Chatterbox is a MERN stack chat application, which utilizes SocketIO to provide users a duplex communication channel. The primary goal of building this application was to solidify my understanding of client/server network architecture. Through building Chatterbox I was able to gain further comprehension and comfortability surroundings REST API's, MongoDB/Mongoose, session storage, user authentication, form validation, password hashing, cors, etc. Create React App was used to provide the front-end for this application. I have worked with Pug's templating engine to render view files in a traditional MVC design pattern, but who wants to write Pug when they could write React?",
+    techStack: ['mongo', 'express', 'react', 'node', 'socketio'],
+    demoUrl: "https://chatterbox-prod.herokuapp.com/",
+    github: "https://github.com/matthewoctober/chatterbox"
+  },
+  {
+    index: "1",
     title: "Hacker News",
-    desc: "I decided to rebuild Hacker News as my first React project since the is UI straightforward. This allowed me to focus more on composition principles within React, rather than become distracted by fancy styling. Don't get me wrong though, I love fancy styles too. Within this project, I utilized HN's API to pull details surrounding posts, comment threads, users, etc. Since this is all client JavaScript, a refresh button is supplied in each corner of the core pages to update all of the posts and their corresponding threads. I avoided using Redux for this project in an effort to better grok React's concepts and capabilities. I'm currently working on another project involving Redux, though.",
+    desc: "I decided to rebuild Hacker News as my first React project since the is UI straightforward. This allowed me to focus more on composition principles within React, rather than become distracted by fancy styling. Don't get me wrong though, I love fancy styles too. Within this project, I utilized HN's API to pull details surrounding posts, comment threads, users, etc. Since this is all client JavaScript, a refresh button is supplied in each corner of the core pages to update all of the posts and their corresponding threads. I avoided using Redux for this project in an effort to better grok React's concepts and capabilities.",
     techStack: ['react', 'css'],
     demoUrl: "https://matthewoctober-hackernews.netlify.com/",
     github: "https://github.com/matthewoctober/hacker-news-clone"
   },
-  // {
-  //   index: "1",
-  //   title: "Matthew October",
-  //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer libero diam, mollis eu sollicitudin venenatis, scelerisque hendrerit lorem. Cras cursus eros consectetur, sagittis nulla sit amet, scelerisque diam. Sed sed porta est. Maecenas malesuada ipsum in porta luctus. Sed aliquet quam in risus tincidunt, vel maximus ex dapibus. Phasellus imperdiet sagittis nulla, nec hendrerit odio venenatis eu. Mauris eget massa vitae urna rhoncus sollicitudin quis ut magna.",
-  //   techStack: ['gatsbyIcon', 'react', 'graphQL', 'styled'],
-  //   demoUrl: "#",
-  //   github: "https://github.com/matthewoctober/personal-site"
-  // },
   {
     index: "2",
     title: "Rain or Shine",

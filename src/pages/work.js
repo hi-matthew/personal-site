@@ -68,8 +68,8 @@ class Work extends Component {
     const { data, location } = this.props;
     const image = (index) => {
       return index === "0"
-      ? data.hnClone.childImageSharp.fluid
-      : index === "1" ? data.portfolio.childImageSharp.fluid
+      ? data.chatterbox.childImageSharp.fluid
+      : index === "1" ? data.hnClone.childImageSharp.fluid
       : index === "2" ? data.weather.childImageSharp.fluid
       : index === "3" ? data.trello.childImageSharp.fluid
       : data.calculator.childImageSharp.fluid;
@@ -161,6 +161,9 @@ export const query = graphql`
     trello: file(relativePath: {eq: "apps/trello.png"}) {
       ...appStack
     }
+    chatterbox: file(relativePath: {eq: "apps/chatterbox.png"}) {
+      ...appStack
+    }
     calculator: file(relativePath: {eq: "apps/calculator.png"}) {
       ...appStack
     }
@@ -186,6 +189,21 @@ export const query = graphql`
       ...techStack
     }
     css: file(relativePath: {eq: "logos/css.png"}) {
+      ...techStack
+    }
+    express: file(relativePath: {eq: "logos/express.png"}) {
+      ...techStack
+    }
+    jest: file(relativePath: {eq: "logos/jest.png"}) {
+      ...techStack
+    }
+    mongo: file(relativePath: {eq: "logos/mongo.png"}) {
+      ...techStack
+    }
+    node: file(relativePath: {eq: "logos/node.png"}) {
+      ...techStack
+    }
+    socketio: file(relativePath: {eq: "logos/socketio.png"}) {
       ...techStack
     }
   }

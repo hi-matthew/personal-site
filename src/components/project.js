@@ -28,12 +28,12 @@ const Frame = styled.div`
       transform: ${props => props.scale ? "scale(1.3)" : null};
     }
   }
-  & h2::before {
+  & h2::after {
     content: "(Click image to enlarge)";
     color: ${props => props.theme.teal};
     position: relative;
     font-size: 13px;
-    transform: translateY(-30px);
+    transform: translateY(12px);
     display: flex;
     justify-content: center;
     margin-bottom: -15px;
@@ -50,7 +50,7 @@ const TechLogos = styled.ul`
   justify-content: center;
   list-style: none;
   padding: 0 0;
-  margin: 0 0;
+  margin: 10px 0;
   .logo ~ .logo {
     margin-left: 30px;
   }
@@ -68,24 +68,18 @@ const ButtonBin = styled.div`
 
 const Project = ({ url, github, index, image, title, scale, scaleBoolean, desc, icons }) => (
   <Frame scale={scale}>
+    <h2 style={{textAlign: "center"}}>{title}</h2>
     <div
     onClick={() => scaleBoolean(index)}
     className="project"
     >
       <Img fluid={image} />
     </div>
-    <h2 style={{textAlign: "center"}}>{title}</h2>
     <TechLogos>
       {icons.map(logo => (
         <Img className="logo" key={logo.src} fixed={logo} />
       ))}
     </TechLogos>
-    <p style={{
-      textAlign: "center"
-    }}
-    >
-      {desc}
-    </p>
     <ButtonBin>
       <a href={url}
       target={"_blank"}
@@ -100,6 +94,12 @@ const Project = ({ url, github, index, image, title, scale, scaleBoolean, desc, 
         <Button className="button" text="Github" />
       </a>
     </ButtonBin>
+    <p style={{
+      textAlign: "center"
+    }}
+    >
+      {desc}
+    </p>
   </Frame>
 )
 
