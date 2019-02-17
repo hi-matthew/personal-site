@@ -15,7 +15,7 @@ const Frame = styled.div`
     transition: transform 500ms ease, box-shadow 500ms ease;
     border-radius: 5px;
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
     cursor: pointer;
     transform: ${props => props.scale ? "scale(1.75) translateX(-35%)" : null};
