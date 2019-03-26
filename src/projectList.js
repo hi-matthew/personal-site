@@ -7,8 +7,16 @@ const myProjects = [
     demoUrl: "https://chatterbox-prod.herokuapp.com/",
     github: "https://github.com/matthewoctober/chatterbox"
   },
-  {
+    {
     index: "1",
+    title: "Simple Shopping",
+    desc: "Simple Shopping is a simple e-commerce web application. This project was built from scratch--without Create React App--in order to challenge myself in configuring Webpack and Babel with React. This was actually a fun little challenge and it allowed me to create my own \"full-stack from scratch\" boilerplate repo for future projects. The primary purpose of this project, however, was to apprehend the concept of a global state object via Redux. While this application is small and doesn't necessarily need a tool like Redux, I was curious to understand how global state worked. And building an e-commerce application just seemed fun.",
+    techStack: ['react', 'redux', 'webpack', 'babel'],
+    demoUrl: "",
+    github: "https://github.com/matthewoctober/simple-shopping"
+  },
+  {
+    index: "2",
     title: "Hacker News",
     desc: "I decided to rebuild Hacker News as my first React project since the is UI straightforward. This allowed me to focus more on composition principles within React, rather than become distracted by fancy styling. Don't get me wrong though, I love fancy styles too. Within this project, I utilized HN's API to pull details surrounding posts, comment threads, users, etc. Since this is all client JavaScript, a refresh button is supplied in each corner of the core pages to update all of the posts and their corresponding threads. I avoided using Redux for this project in an effort to better grok React's concepts and capabilities.",
     techStack: ['react', 'js'],
@@ -16,7 +24,7 @@ const myProjects = [
     github: "https://github.com/matthewoctober/hacker-news-clone"
   },
   {
-    index: "2",
+    index: "3",
     title: "Rain or Shine",
     desc: "Has there ever been a JS developer who didn't create a proverbial weather app? This weather app utilizes Dark Sky's API for all of its weather data and was contrived with plain HTML, CSS and JS. This application was mobile-first inspired, so I recommend using it in a mobile view. The desktop view works fine too, though. All of the transitions occur within the same page, so make sure to explore the menu to explore all of the weather details. This application includes the current temperature, an eight day and twenty-four hour forecast, as well as additional details like wind speed, humidity, etc.",
     techStack: ['webpack', 'js', 'css', 'html'],
@@ -24,7 +32,7 @@ const myProjects = [
     github: "https://github.com/matthewoctober/weather-app",
   },
   {
-    index: "3",
+    index: "4",
     title: "Trello",
     desc: "This is a project I'd almost like to rebuild inside React to better handle state. I originally thought to create a Trello app to cement DOM manipulation principles--which served to be effective--but an app like this, ultimately, requires more sophisticated technology than just plain HTML, CSS and JS. You may find a bug or two depending on how much effort you place forth--launch early and iterate, right?",
     techStack: ['js', 'css', 'html'],
@@ -32,7 +40,7 @@ const myProjects = [
     github: "https://github.com/matthewoctober/trello-clone",
   },
   {
-    index: "4",
+    index: "5",
     title: "iOS Calculator",
     desc: "This still serves as one of my favorite projects I've participated in crafting. All of the logic behind this iOS calculator was composed in vanilla JS. I did, however, leverage the MathJS library for floating point errors because screw that. This project was also my introduction to webpack, so the webpack configuration file within this project is quite primitive. The weather app webpack configuration file is more robust, if you're curious.",
     techStack: ['webpack', 'js', 'css', 'html'],

@@ -69,9 +69,10 @@ class Work extends Component {
     const image = (index) => {
       return index === "0"
       ? data.chatterbox.childImageSharp.fluid
-      : index === "1" ? data.hnClone.childImageSharp.fluid
-      : index === "2" ? data.weather.childImageSharp.fluid
-      : index === "3" ? data.trello.childImageSharp.fluid
+      : index === "1" ? data.simpleShopping.childImageSharp.fluid
+      : index === "2" ? data.hnClone.childImageSharp.fluid
+      : index === "3" ? data.weather.childImageSharp.fluid
+      : index === "4" ? data.trello.childImageSharp.fluid
       : data.calculator.childImageSharp.fluid;
     }
     const logos = (techStack) => {
@@ -152,7 +153,7 @@ export const query = graphql`
     hnClone: file(relativePath: {eq: "apps/hnClone.png"}) {
       ...appStack
     }
-    portfolio: file(relativePath: {eq: "apps/portfolio.png"}) {
+    simpleShopping: file(relativePath: {eq: "apps/simpleShopping.png"}) {
       ...appStack
     }
     weather: file(relativePath: {eq: "apps/weather.png"}) {
@@ -168,6 +169,9 @@ export const query = graphql`
       ...appStack
     }
     react: file(relativePath: {eq: "logos/react.png"}) {
+      ...techStack
+    }
+    redux: file(relativePath: {eq: "logos/redux.png"}) {
       ...techStack
     }
     js: file(relativePath: {eq: "logos/js.jpg"}) {
@@ -204,6 +208,9 @@ export const query = graphql`
       ...techStack
     }
     socketio: file(relativePath: {eq: "logos/socketio.png"}) {
+      ...techStack
+    }
+    babel: file(relativePath: {eq: "logos/babel.jpg"}) {
       ...techStack
     }
   }

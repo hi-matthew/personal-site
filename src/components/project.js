@@ -85,7 +85,7 @@ const Project = ({ url, github, index, image, title, scale, scaleBoolean, desc, 
       target={"_blank"}
       className="link"
       >
-        <Button className="button" text="Demo" />
+        <Button className="button" text={url ? "Demo" : "Deploying soon!"} />
       </a>
       <a href={github}
       target={"_blank"}
