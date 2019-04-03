@@ -12,7 +12,7 @@ const myProjects = [
     title: "Simple Shopping",
     desc: "Simple Shopping is a simple e-commerce web application. This project was built from scratch--without Create React App--in order to challenge myself in configuring Webpack and Babel with React. This was actually a fun little challenge and it allowed me to create my own \"full-stack from scratch\" boilerplate repo for future projects. The primary purpose of this project, however, was to apprehend the concept of a global state object via Redux. While this application is small and doesn't necessarily need a tool like Redux, I was curious to understand how global state worked. And building an e-commerce application just seemed fun.",
     techStack: ['react', 'redux', 'webpack', 'babel'],
-    demoUrl: "",
+    demoUrl: "https://simple-shopping-app.appspot.com/",
     github: "https://github.com/matthewoctober/simple-shopping"
   },
   {
